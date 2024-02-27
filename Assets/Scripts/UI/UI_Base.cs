@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UI_Base<T> : MonoBehaviour
 {
-    protected bool IsEnabled { get; private set; } = true;
+    public bool IsEnabled { get; private set; } = true;
 
     public void OnEnable()
     {

@@ -35,8 +35,45 @@ public class UI_Manager : MonoBehaviour
             return CreateUI<T>(parent);
     }
 
-    private T CreateUI<T>(Transform parent)
+    public T CreateUI<T>(Transform parent = null)
     {
-        throw new NotImplementedException();
+        try
+        {
+            if (IsUIExit<T>())
+                UI_List.Remove(typeof(T).Name);
+
+            GameObject go = Instantiate(Resources.Load<GameObject>(GetPath<T>()), parent);
+
+            T temp = go.GetComponent<T>();
+            AddUI<T>(go);
+
+            return temp;
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError(ex.Message);
+        }
+
+        return default;
+    }
+
+    public void AddUI<T>(GameObject go)
+    {
+        if (UI_List.ContainsKey(typeof(T).Name) == false)
+            UI_List.Add(typeof(T).Name, go);
+    }
+
+    public bool IsUIExit<T>()
+    {
+        if (UI_List.ContainsKey(typeof(T).Name))
+            return true;
+        else
+            return false;
+    }
+
+    private string GetPath<T>()
+    {
+        string className = typeof(T).Name;  
+        return "Prefabs/UI/" + className;
     }
 }
