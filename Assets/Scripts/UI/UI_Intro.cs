@@ -10,7 +10,13 @@ public class UI_Intro : UI_Base<UI_Intro>
     [SerializeField] private TextMeshProUGUI _anyKeyText;
 
     private float time = 0f;
-    // Start is called before the first frame update
+
+    public override void OnEnable()
+    {
+        OpenUI();
+    }
+
+
     void Start()
     {
         _titleRectTransform.DOAnchorPosX(0,2).SetDelay(1.5f).SetEase(Ease.InOutFlash);
@@ -26,7 +32,7 @@ public class UI_Intro : UI_Base<UI_Intro>
             if(Input.anyKeyDown)
             {
                 time = 0f;
-                Debug.Log("다음 씬 시작!");
+                UI_Manager.instance.ShowLodingSceneUI<UI_Loading>("GameScene");
             }
         }
     }

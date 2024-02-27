@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class UI_Manager : MonoBehaviour
@@ -24,6 +25,11 @@ public class UI_Manager : MonoBehaviour
 
     Dictionary<string, GameObject> UI_List = new Dictionary<string, GameObject>();
 
+    [HideInInspector]public string sceneName;
+
+    /// <summary>
+    /// UI를 보여줍니다 받아올 UI가 없으면 생성 후 보여줍니다
+    /// </summary>
     public T ShowUI<T>(Transform parent = null) where T : Component
     {
         if (UI_List.ContainsKey(typeof(T).Name) && UI_List[typeof(T).Name] != null)
@@ -76,4 +82,18 @@ public class UI_Manager : MonoBehaviour
         string className = typeof(T).Name;  
         return "Prefabs/UI/" + className;
     }
+
+    public UI_Loading ShowLodingSceneUI<UI_Loading>(string loadSceneName,Transform parent = null) where UI_Loading : Component
+    {
+        sceneName = loadSceneName;
+
+        if (UI_List.ContainsKey(typeof(UI_Loading).Name) && UI_List[typeof(UI_Loading).Name] != null)
+        {
+            UI_List[typeof(UI_Loading).Name].SetActive(false);
+            return UI_List[typeof(UI_Loading).Name].GetComponent<UI_Loading>();
+        }
+        else
+            return CreateUI<UI_Loading>(parent);
+    }
+
 }

@@ -2,14 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Base<T> : MonoBehaviour
+public abstract class UI_Base<T> : MonoBehaviour
 {
     public bool IsEnabled { get; private set; } = true;
 
-    public void OnEnable()
-    {
-        OpenUI();
-    }
+    public abstract void OnEnable();
 
     public virtual void OpenUI()
     {
