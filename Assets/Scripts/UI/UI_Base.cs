@@ -20,5 +20,10 @@ public abstract class UI_Base<T> : MonoBehaviour
         IsEnabled = false;
     }
 
+    public virtual void DestroyUI()
+    {
+        Destroy(gameObject);
+    }
+
 
 }
