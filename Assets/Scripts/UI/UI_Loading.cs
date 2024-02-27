@@ -56,7 +56,7 @@ public class UI_Loading : UI_Base<UI_Loading>
             }
             else
             {
-                timer += Time.unscaledDeltaTime;
+                timer += Time.unscaledDeltaTime * 0.5f;
                 progressBar.fillAmount = Mathf.Lerp(0.9f, 1f, timer);
                 if(progressBar.fillAmount >= 1f)
                 {
@@ -71,8 +71,9 @@ public class UI_Loading : UI_Base<UI_Loading>
     {
         if(arg0.name == loadSceneName)
         {
-            StartCoroutine(Fade(false));
             SceneManager.sceneLoaded -= OnsceneLoaded;
+            StartCoroutine(Fade(false)); 
+
         }
     }
 
@@ -88,7 +89,7 @@ public class UI_Loading : UI_Base<UI_Loading>
 
         if(!isFadein)
         {
-            CloseUI();
+            Invoke("DestroyUI", 2f);
         }
     }
 }

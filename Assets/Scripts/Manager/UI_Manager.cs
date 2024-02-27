@@ -83,17 +83,20 @@ public class UI_Manager : MonoBehaviour
         return "Prefabs/UI/" + className;
     }
 
-    public UI_Loading ShowLodingSceneUI<UI_Loading>(string loadSceneName,Transform parent = null) where UI_Loading : Component
+
+    /// <summary>
+    /// LoadingUI를 불러옵니다. 매개 변수로는 이동하고 싶은 SceneName을 넣어주세요
+    /// </summary>
+    public UI_Loading ShowLoadingUI(string loadSceneName)
     {
         sceneName = loadSceneName;
 
         if (UI_List.ContainsKey(typeof(UI_Loading).Name) && UI_List[typeof(UI_Loading).Name] != null)
         {
-            UI_List[typeof(UI_Loading).Name].SetActive(false);
             return UI_List[typeof(UI_Loading).Name].GetComponent<UI_Loading>();
         }
         else
-            return CreateUI<UI_Loading>(parent);
+            return CreateUI<UI_Loading>();
     }
 
 }
