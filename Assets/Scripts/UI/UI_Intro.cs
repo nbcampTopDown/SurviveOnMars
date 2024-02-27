@@ -27,7 +27,7 @@ public class UI_Intro : UI_Base<UI_Intro>
     void Update()
     {
         time += Time.deltaTime;
-        if(time > 6f)
+        if(time > 5f)
         {
             if(Input.anyKeyDown)
             {
