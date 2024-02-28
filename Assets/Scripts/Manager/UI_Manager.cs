@@ -43,6 +43,9 @@ public class UI_Manager : MonoBehaviour
 
     public void HideUI<T>()
     {
+        if (Time.timeScale != 0f)
+            return;
+
         if (UI_List.ContainsKey(typeof(T).Name) && UI_List[typeof(T).Name] == null)
             return;
 

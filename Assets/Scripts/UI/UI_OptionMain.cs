@@ -11,6 +11,9 @@ public class UI_OptionMain : UI_Base<UI_OptionMain>
 
     [SerializeField] private Button optionButton;
     [SerializeField] private Button gameExitButton;
+    [SerializeField] private Button mainWindowBackButton;
+    [SerializeField] private Button optionBackButton;
+
 
 
     public override void OnEnable()
@@ -21,8 +24,10 @@ public class UI_OptionMain : UI_Base<UI_OptionMain>
 
     private void Start()
     {
-        optionButton.onClick.AddListener(OptionActive);
-        gameExitButton.onClick.AddListener(ExitGame);
+        optionButton.onClick.AddListener(OnClickOptionButton);
+        gameExitButton.onClick.AddListener(OnClickExitButton);
+        optionBackButton.onClick.AddListener(OnClickBackButton);
+        mainWindowBackButton.onClick.AddListener(OnClickMainBackButton);
 
         mainFrame.transform.localScale = Vector3.one * 0.1f;
     }
@@ -38,24 +43,25 @@ public class UI_OptionMain : UI_Base<UI_OptionMain>
         seq.Append(mainFrame.transform.DOScale(1.1f, 0.2f));
         seq.Append(mainFrame.transform.DOScale(1f, 0.1f));
 
-        seq.Play();
+        seq.Play().OnComplete(()=> Time.timeScale = 0f);
     }
 
     public void Hide()
     {
+        Time.timeScale = 1f;
         CloseUI();
         mainFrame.SetActive(true);
         option.SetActive(false);
         mainFrame.transform.localScale = Vector3.one * 0.1f;
     }
 
-    private void OptionActive()
+    private void OnClickOptionButton()
     {
         mainFrame.SetActive(false);
         option.SetActive(true);
     }
 
-    private void ExitGame()
+    private void OnClickExitButton()
     {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
@@ -63,6 +69,16 @@ public class UI_OptionMain : UI_Base<UI_OptionMain>
         Application.Quit();
 #endif
 
+    }
+
+    private void OnClickBackButton()
+    {
+        mainFrame.SetActive(true);
+        option.SetActive(false);
+    }
+    private void OnClickMainBackButton()
+    {
+        Hide();
     }
 
 }

@@ -32,7 +32,7 @@ public class UI_Intro : UI_Base<UI_Intro>
             if(Input.anyKeyDown)
             {
                 time = 0f;
-                UI_Manager.instance.ShowLoadingUI("GameScene");
+                UI_Manager.instance.ShowLoadingUI("KSM_TestScene");
             }
         }
     }
