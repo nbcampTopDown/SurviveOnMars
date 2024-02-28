@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IWeapon 
 {
-    void Attack(PlayerStatsManager weaponStats, Vector3 origin, Vector3 dir);
+    void Attack(PlayerStatsManager weaponStats, Vector3 origin, Quaternion rotation);
     // void SpawnCase(Transform caseSpawnPoint);
 }

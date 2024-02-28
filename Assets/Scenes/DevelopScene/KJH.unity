@@ -783,6 +783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet_Rifle
       objectReference: {fileID: 0}
+    - target: {fileID: 7837803861138202236, guid: bc7d3043fbea49544b0a432b762763fa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

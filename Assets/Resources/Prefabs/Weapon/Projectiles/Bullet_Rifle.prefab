@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 328794304999110141}
   - component: {fileID: 1769980150610102961}
   - component: {fileID: 1609082692114414577}
-  - component: {fileID: 356648796610673681}
+  - component: {fileID: 3713182301126450823}
   - component: {fileID: 6249152990258998265}
   - component: {fileID: 2066364580916481296}
   - component: {fileID: 176719963850699943}
@@ -89,8 +89,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &356648796610673681
-SphereCollider:
+--- !u!65 &3713182301126450823
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -108,8 +108,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
-  m_Center: {x: 0, y: 0, z: 0.4}
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &6249152990258998265
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,7 +136,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!108 &2066364580916481296
 Light:
   m_ObjectHideFlags: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
 --- !u!114 &8222348946996781294
 MonoBehaviour:
   m_ObjectHideFlags: 0
