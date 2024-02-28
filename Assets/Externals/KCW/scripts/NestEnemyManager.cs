@@ -6,17 +6,18 @@ using static UnityEngine.GraphicsBuffer;
 
 public class NestEnemyManager : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    public List<GameObject> enemyPrefabList;
     private Vector3 SpawnPosition;
     public IObjectPool<GameObject> enemyPool;
     private List<GameObject> enemyList = new List<GameObject>();
 
     private bool trackPlayer = false;
     private float delaySecond = 1.0f;
-    private int defaultCapacity =30;
+    private int defaultCapacity =10;
+    private int maxSize = 30;
     public int nestTimeCheck = 0;
 
-    void Awake()
+    void Start()
     {
         SpawnPosition = GetComponent<Transform>().position;
         Init();
@@ -35,7 +36,8 @@ public class NestEnemyManager : MonoBehaviour
             OnTakeFromPool,
             OnReturnedToPool,
             OnDestroyPoolObject, true,
-            defaultCapacity
+            defaultCapacity,
+            maxSize
             );
 
         for(int i=0; i<defaultCapacity; i++)
@@ -52,13 +54,14 @@ public class NestEnemyManager : MonoBehaviour
 
         if(nestTimeCheck==5)
         {
-            if (enemyPool.CountInactive == 0)
+            if (enemyList.Count >= 15)
             {
                 trackPlayer = true;
             }
             else
             {
                 var enemygo = enemyPool.Get();
+                enemyList.Add(enemygo);
                 enemygo.transform.position = SpawnPosition;
             }
 
@@ -69,9 +72,25 @@ public class NestEnemyManager : MonoBehaviour
         if (trackPlayer == true)
         {
             GameObject target = GameObject.FindGameObjectWithTag("Player");
-            for (int i = 0; i < enemyList.Count - 10; i++)
+
+            int enemyCount = 0;
+            for (int i = 0; i < enemyList.Count; i++)
             {
-                enemyList[i].GetComponent<EnemyTest>().Attack(target.transform.position);
+                if (enemyList[i].activeSelf == true)
+                {
+                    enemyList[i].GetComponent<EnemyTest>().Attack(target.transform.position);
+                    enemyCount++;
+
+                    if(enemyCount >= 15)
+                    {
+                        break;
+                    }
+                }
+                else
+                {
+                    continue;
+                }
+                
             }
         }
 
@@ -107,15 +126,16 @@ public class NestEnemyManager : MonoBehaviour
 
     private GameObject CreatePooledItem()
     {
-        GameObject poolGo = Instantiate(enemyPrefab);
-        poolGo.GetComponent<EnemyTest>().enemyPool = this.enemyPool;
+        int randNumb = Random.Range(0, enemyPrefabList.Count);
+        GameObject poolGo = Instantiate(enemyPrefabList[randNumb]);
+        poolGo.GetComponent<EnemyTest>().SetPool(this.enemyPool);
         return poolGo;
     }
 
     private void OnTakeFromPool(GameObject poolGo)
     {
         poolGo.SetActive(true);
-        enemyList.Add(poolGo);
+        
     }
 
     private void OnReturnedToPool(GameObject poolGo)
@@ -124,6 +144,7 @@ public class NestEnemyManager : MonoBehaviour
     }
     private void OnDestroyPoolObject(GameObject poolGo)
     {
+        enemyList.RemoveAt(enemyList.IndexOf(poolGo));
         Destroy(poolGo);
     }
 }

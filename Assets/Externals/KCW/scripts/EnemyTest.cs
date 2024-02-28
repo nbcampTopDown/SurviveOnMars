@@ -31,6 +31,11 @@ public class EnemyTest : MonoBehaviour
         }
     }
 
+    public void SetPool(IObjectPool<GameObject> pool)
+    {
+        enemyPool = pool;
+    }
+
     public void Attack(Vector3 targetPosition)
     {
         target = true;

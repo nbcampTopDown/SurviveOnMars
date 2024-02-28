@@ -352,6 +352,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapInfo: {fileID: 5226247602700352378, guid: 303475cb1bdc2064fa6d0ddcf27c9aa5, type: 3}
+  enemyPrefab: {fileID: 9215314794700116727, guid: 9599f1c95110a3441a0bfef5dcb6d7ca, type: 3}
+  enemyPrefab2: {fileID: 5955305586748573040, guid: 93718a3975e8a9447ae46c4122a3b0f3, type: 3}
 --- !u!4 &500832076
 Transform:
   m_ObjectHideFlags: 0
