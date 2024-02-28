@@ -34,11 +34,31 @@ public class UI_Manager : MonoBehaviour
     {
         if (UI_List.ContainsKey(typeof(T).Name) && UI_List[typeof(T).Name] != null)
         {
-            UI_List[typeof(T).Name].SetActive(false);
+            UI_List[typeof(T).Name].SetActive(true);
             return UI_List[typeof(T).Name].GetComponent<T>();
         }
         else
             return CreateUI<T>(parent);
+    }
+
+    public void HideUI<T>()
+    {
+        if (UI_List.ContainsKey(typeof(T).Name) && UI_List[typeof(T).Name] == null)
+            return;
+
+        UI_List[typeof(T).Name].SetActive(false);
+    }
+
+    public void RemoveUI<T>()
+    {
+        string className = typeof(T).Name;
+        if (UI_List.ContainsKey(className))
+        {
+            //if (UI_List[className].gameObject != null)
+            //    Destroy(UIList[className]);
+
+            UI_List.Remove(className);
+        }
     }
 
     public T CreateUI<T>(Transform parent = null)
@@ -93,10 +113,39 @@ public class UI_Manager : MonoBehaviour
 
         if (UI_List.ContainsKey(typeof(UI_Loading).Name) && UI_List[typeof(UI_Loading).Name] != null)
         {
+            UI_List[typeof(UI_Loading).Name].SetActive(true);
             return UI_List[typeof(UI_Loading).Name].GetComponent<UI_Loading>();
         }
         else
             return CreateUI<UI_Loading>();
+    }
+
+    public void DestroyUI<T>()
+    {
+        string className = typeof(T).Name;
+        if (UI_List.ContainsKey(className))
+        {
+            if (UI_List[className].gameObject != null)
+                Destroy(UI_List[className]);
+
+            UI_List.Remove(className);
+        }
+    }
+
+    public bool IsAcitve<T>()
+    {
+        if(IsUIExit<T>() && UI_List[typeof(T).Name] == null)
+        {
+            RemoveUI<T>();
+            return false;
+        }
+
+        if (IsUIExit<T>() && UI_List[typeof(T).Name].activeSelf)
+        {
+            return UI_List[typeof(T).Name].GetComponent<UI_Base<T>>().IsEnabled;
+        }
+        else
+            return false;
     }
 
 }
