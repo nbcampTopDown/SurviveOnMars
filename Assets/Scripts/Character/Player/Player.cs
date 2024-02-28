@@ -62,22 +62,22 @@ public class Player : MonoBehaviour, IDamageable
         enabled = false;
     }
 
-    public bool TryUseWeapon(Vector3 dir)
+    public bool TryUseWeapon()
     {
-        if (_canFire && Managers.Attack.currAmmo > 0)
+        if (_canFire && Managers.Player.currAmmo > 0)
         {
             _canFire = false;
-            StartCoroutine(Attack(dir));
+            StartCoroutine(Attack());
             return true;
         }
 
         return false;
     }
 
-    private IEnumerator Attack(Vector3 dir)
+    private IEnumerator Attack()
     {
         MuzzleFlash.Play();
-        Managers.Attack.UseWeapon(dir);
+        Managers.Attack.UseWeapon();
         yield return new WaitForSeconds(0.1f);
         _canFire = true;
     }
