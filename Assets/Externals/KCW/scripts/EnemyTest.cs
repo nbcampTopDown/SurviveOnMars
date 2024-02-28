@@ -9,7 +9,7 @@ public class EnemyTest : MonoBehaviour
     private Rigidbody rb;
 
     private Vector3 targetP;
-    public float speed = 0.5f;
+    public float speed = 0.3f;
 
     public bool target = false;
 
@@ -20,12 +20,14 @@ public class EnemyTest : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(target == false)
-            this.transform.Translate(Vector3.forward*this.speed*Time.deltaTime);
-        else
+        if (transform.position.z > 70)
         {
-            Debug.Log(this.transform.position);
-            Debug.Log(targetP);
+            enemyPool.Release(this.gameObject);
+        }
+
+
+        if (target == true)
+        {
             Vector3 direction = (targetP - this.transform.position).normalized;
             rb.velocity = direction * speed;
         }

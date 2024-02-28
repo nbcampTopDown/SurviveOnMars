@@ -42,7 +42,9 @@ public class NestEnemyManager : MonoBehaviour
 
         for(int i=0; i<defaultCapacity; i++)
         {
-            EnemyTest enemy = CreatePooledItem().GetComponent<EnemyTest>();
+            GameObject enemyTemp = CreatePooledItem();
+            EnemyTest enemy = enemyTemp.GetComponent<EnemyTest>();
+            enemyList.Add(enemyTemp);
             enemy.enemyPool.Release(enemy.gameObject);
         }
     }
@@ -52,17 +54,18 @@ public class NestEnemyManager : MonoBehaviour
         yield return new WaitForSeconds(delaySecond);
         nestTimeCheck++;
 
-        if(nestTimeCheck==5)
+        if(nestTimeCheck==2)
         {
             if (enemyList.Count >= 15)
             {
                 trackPlayer = true;
             }
-            else
+            
+            if(enemyList.Count<=30)
             {
                 var enemygo = enemyPool.Get();
-                enemyList.Add(enemygo);
                 enemygo.transform.position = SpawnPosition;
+                Debug.Log(enemyList.Count);
             }
 
             nestTimeCheck = 0;
@@ -134,13 +137,14 @@ public class NestEnemyManager : MonoBehaviour
 
     private void OnTakeFromPool(GameObject poolGo)
     {
-        poolGo.SetActive(true);
-        
+        enemyList.Add(poolGo);
+        poolGo.SetActive(true);       
     }
 
     private void OnReturnedToPool(GameObject poolGo)
     {
         poolGo.SetActive(false);
+        enemyList.RemoveAt(enemyList.IndexOf(poolGo));
     }
     private void OnDestroyPoolObject(GameObject poolGo)
     {

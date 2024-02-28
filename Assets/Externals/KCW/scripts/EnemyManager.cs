@@ -41,7 +41,7 @@ public class EnemyManager: MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (TimeManager.timeIns.totalTime == 10 && lastWaveStage == false)
+        if (TimeManager.timeIns.totalTime == 100 && lastWaveStage == false)
         {
             lastWaveStage = true;
             LastWave();
