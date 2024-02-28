@@ -22,12 +22,12 @@ public class UI_Loading : UI_Base<UI_Loading>
     public override void OnEnable()
     {
         OpenUI();
-        DontDestroyOnLoad(gameObject);
+        LoadScene();
     }
 
     private void Start()
     {
-        LoadScene();
+        DontDestroyOnLoad(gameObject);
     }
 
     public void LoadScene()
@@ -89,7 +89,7 @@ public class UI_Loading : UI_Base<UI_Loading>
 
         if(!isFadein)
         {
-            Invoke("DestroyUI", 2f);
+            CloseUI();
         }
     }
 }
