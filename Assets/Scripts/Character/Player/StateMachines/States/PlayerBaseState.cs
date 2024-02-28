@@ -122,11 +122,6 @@ public class PlayerBaseState : IState
     {
         stateMachine.IsRunning = false;
     }
-
-    protected virtual void OnReloadStarted(InputAction.CallbackContext context)
-    {
-        StartAnimation(stateMachine.Player.AnimationData.ReloadingParameterHash);
-    }
     
     private void ReadMovementInput()
     {
@@ -191,6 +186,11 @@ public class PlayerBaseState : IState
     #endregion
     
     #region Attack
+    protected virtual void OnReloadStarted(InputAction.CallbackContext context)
+    {
+        StartAnimation(stateMachine.Player.AnimationData.ReloadingParameterHash);
+    }
+    
     protected virtual void OnAimingStarted(InputAction.CallbackContext context)
     {
         stateMachine.IsAiming = true;
@@ -200,7 +200,7 @@ public class PlayerBaseState : IState
     {
         stateMachine.IsAiming = false;
     }
-    
+
     protected virtual void OnAttackStarted(InputAction.CallbackContext context)
     {
         stateMachine.IsAttacking = true;

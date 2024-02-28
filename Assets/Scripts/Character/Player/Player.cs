@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable
@@ -14,6 +15,10 @@ public class Player : MonoBehaviour, IDamageable
     public CharacterHealth CharacterHealth { get; private set; }
     
     private PlayerStateMachine _stateMachine;
+
+    [field: SerializeField] public ParticleSystem MuzzleFlash { get; private set; }
+    private float _fireDelay;
+    private bool _canFire;
     
     private void Awake()
     {
@@ -24,6 +29,7 @@ public class Player : MonoBehaviour, IDamageable
         ForceReceiver = GetComponent<ForceReceiver>();
         CharacterHealth = GetComponent<CharacterHealth>();
 
+        _canFire = true;
         _stateMachine = new PlayerStateMachine(this);
     }
     
@@ -56,8 +62,29 @@ public class Player : MonoBehaviour, IDamageable
         enabled = false;
     }
 
+    public bool TryUseWeapon(Vector3 dir)
+    {
+        if (_canFire && Managers.Attack.currAmmo > 0)
+        {
+            _canFire = false;
+            StartCoroutine(Attack(dir));
+            return true;
+        }
+
+        return false;
+    }
+
+    private IEnumerator Attack(Vector3 dir)
+    {
+        MuzzleFlash.Play();
+        Managers.Attack.UseWeapon(dir);
+        yield return new WaitForSeconds(0.1f);
+        _canFire = true;
+    }
+
     public void Reloaded()
     {
         Animator.SetBool(AnimationData.ReloadingParameterHash, false);
+        Managers.Attack.Reload();
     }
 }

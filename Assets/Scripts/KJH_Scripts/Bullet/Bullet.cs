@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
     public float BulletSpeed { get; protected set; } // 탄속
 
 
-    public virtual void Setup(Vector3 spawnPos, Vector3 dir, float atk, float bulletSpeed)
+    public virtual void Setup(Vector3 spawnPos, Quaternion rotation, float atk, float bulletSpeed)
     {
         Atk = atk;
         BulletSpeed = bulletSpeed;

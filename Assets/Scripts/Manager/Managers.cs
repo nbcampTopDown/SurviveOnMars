@@ -25,9 +25,9 @@ public class Managers : MonoBehaviour
         Attack.Init();
         Pool.Init();
         Player.PlayerSetup();
-        Attack.WeaponSetup();      
+        Attack.WeaponSetup();
     }
-
+    
     private static void Init()
     {
         if(s_instance == null)

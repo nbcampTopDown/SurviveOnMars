@@ -17,8 +17,23 @@ public class PlayerAimingState : PlayerBaseState
     {
         base.ExitState();
         StopAnimation(stateMachine.Player.AnimationData.IsAimingParameterHash);
+        StopAnimation(stateMachine.Player.AnimationData.ShootingParameterHash);
     }
-    
+
+    public override void Update()
+    {
+        base.Update();
+
+        if (stateMachine.IsAttacking && stateMachine.Player.TryUseWeapon(GetAimPosition()))
+        {
+            StartAnimation(stateMachine.Player.AnimationData.ShootingParameterHash);
+        }
+        else
+        {
+            StopAnimation(stateMachine.Player.AnimationData.ShootingParameterHash);
+        }
+    }
+
     protected override void Rotate(Vector3 movementDirection)
     {
         var playerPos = stateMachine.Player.transform.position;
@@ -46,18 +61,6 @@ public class PlayerAimingState : PlayerBaseState
     {
         base.OnAimingCanceled(context);
         stateMachine.ChangeState(stateMachine.IdleState);
-    }
-
-    protected override void OnAttackStarted(InputAction.CallbackContext context)
-    {
-        base.OnAttackStarted(context);
-        StartAnimation(stateMachine.Player.AnimationData.ShootingParameterHash);
-    }
-
-    protected override void OnAttackCanceled(InputAction.CallbackContext context)
-    {
-        base.OnAttackCanceled(context);
-        StopAnimation(stateMachine.Player.AnimationData.ShootingParameterHash);
     }
 
     protected override void OnMovementCanceled(InputAction.CallbackContext context)

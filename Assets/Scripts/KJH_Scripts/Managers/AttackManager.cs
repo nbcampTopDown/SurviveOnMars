@@ -54,7 +54,9 @@ public class AttackManager
         if (currAmmo > 0)
         {
             currAmmo--;
-            currWeapon.Attack(playerStatsManager, BulletSpawnPoint.position, dir);
+            dir.y = BulletSpawnPoint.position.y;
+            
+            currWeapon.Attack(playerStatsManager, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
             // currWeapon.SpawnCase(CaseSpawnPoint);
         }
     }

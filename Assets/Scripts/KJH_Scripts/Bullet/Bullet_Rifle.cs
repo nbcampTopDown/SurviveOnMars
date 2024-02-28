@@ -14,12 +14,12 @@ public class Bullet_Rifle : Bullet
         _trailRenderer = GetComponent<TrailRenderer>();
     }
     
-    public override void Setup(Vector3 spawnPos, Vector3 dir, float atk, float bulletSpeed)
+    public override void Setup(Vector3 spawnPos, Quaternion rotation, float atk, float bulletSpeed)
     {
-        base.Setup(spawnPos, dir, atk, bulletSpeed);
+        base.Setup(spawnPos, rotation, atk, bulletSpeed);
 
         transform.position = spawnPos;
-        transform.LookAt(dir);
+        transform.rotation = rotation;
     }
     
     private void FixedUpdate()
@@ -34,7 +34,11 @@ public class Bullet_Rifle : Bullet
     
     private void OnTriggerEnter(Collider collision)
     {
-
+        if (collision.TryGetComponent<IDamageable>(out var iDamageable))
+        {
+            iDamageable.TakeDamage(Atk);
+        }
+        OnHitClear();
     }
 
     private IEnumerator OnTimeClear(float time)
