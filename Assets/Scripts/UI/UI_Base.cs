@@ -22,7 +22,7 @@ public abstract class UI_Base<T> : MonoBehaviour
 
     public virtual void DestroyUI()
     {
-        Destroy(gameObject);
+        UI_Manager.instance.DestroyUI<T>();
     }
 
 
