@@ -1,18 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameManager : MonoBehaviour
+public class gameManager : Singleton<gameManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    public event Action GameClear;
+    public event Action GameOver;
+
+    private void Start()
     {
-        
+        GameClear += StopRoutine;
+        GameOver += StopRoutine;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void StopRoutine()
     {
-        
+        StopAllCoroutines();
+    }
+
+    public void CallGameClear()
+    {
+        GameClear?.Invoke();
+    }
+
+    public void CallGameOver()
+    {
+        GameOver?.Invoke();
     }
 }

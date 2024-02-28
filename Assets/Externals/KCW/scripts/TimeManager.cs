@@ -8,6 +8,11 @@ public class TimeManager : MonoBehaviour
     public static TimeManager timeIns;
     public int totalTime = 0;
 
+    private void Start()
+    {
+        gameManager.Instance.GameClear += StopTimer;
+        gameManager.Instance.GameOver += StopTimer;
+    }
     private void Awake()
     {
         timeIns = this;//싱글톤화
