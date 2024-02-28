@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,6 @@ using UnityEngine;
 public class Bullet_Rifle : Bullet
 {
     private Rigidbody rb;
-    private Vector3 attackDirection;
     private TrailRenderer _trailRenderer;
 
     private void Awake()
@@ -29,9 +29,13 @@ public class Bullet_Rifle : Bullet
     private void OnFire()
     {   
         rb.velocity =  transform.forward * BulletSpeed;
-        StartCoroutine(OnTimeClear(1f));     
     }
-    
+
+    private void OnEnable()
+    {
+        StartCoroutine(OnTimeClear(1f));   
+    }
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.TryGetComponent<IDamageable>(out var iDamageable))

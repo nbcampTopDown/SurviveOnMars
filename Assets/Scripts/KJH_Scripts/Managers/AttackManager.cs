@@ -14,15 +14,13 @@ public class AttackManager
     [Header("PlayerWeaponsLogic")] 
     
     private IWeapon currWeapon; // 현재 장착
-    public WeaponSO currSO { get; private set; }
+    public WeaponSO currSO { get; private set; } // 현재 무기
 
     [Header("WeaponItself")] 
     
     // public GameObject WeaponModel;
     public Transform BulletSpawnPoint;
     // public Transform CaseSpawnPoint;
-    
-    public int currAmmo; //현재 탄약 수
 
     //ToDo 플레이어의 다른 무기 정보를 여기서 저장?
     // private IWeapon primaryWeapon;
@@ -49,13 +47,11 @@ public class AttackManager
         OnChangeWeapon?.Invoke(weapon);
     }
 
-    public void UseWeapon(Vector3 dir)
+    public void UseWeapon()
     {
-        if (currAmmo > 0)
+        if (Managers.Player.currAmmo > 0)
         {
-            currAmmo--;
-            dir.y = BulletSpawnPoint.position.y;
-            
+            Managers.Player.currAmmo--;
             currWeapon.Attack(playerStatsManager, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
             // currWeapon.SpawnCase(CaseSpawnPoint);
         }
@@ -63,11 +59,22 @@ public class AttackManager
 
     public void Reload()
     {
-        Managers.Attack.currAmmo = Managers.Player.W_Ammo;
+        Managers.Player.currAmmo = Managers.Player.W_Ammo;
+    }
+
+    public void UseGrenade()
+    {
+        if (Managers.Player.hasGrenades > 0)
+        {
+            Managers.Player.hasGrenades--;
+            
+            Bullet_Grenade bullet_Grenade = Managers.RM.Instantiate("Weapon/Projectiles/Bullet_Grenade").GetComponent<Bullet_Grenade>();
+            bullet_Grenade.Setup(BulletSpawnPoint.position, BulletSpawnPoint.rotation, 50, 10);
+        }
     }
 
     public void Init() //이니셜라이즈 설정
-    {   Debug.Log("무기이니셜");
+    {   
         currWeapon = new Weapon_Rifle();
         currSO = Resources.Load<WeaponSO>("Scriptable/WeaponData/Weapon_Rifle");
         playerStatsManager = Managers.Player;
@@ -81,11 +88,6 @@ public class AttackManager
         // CaseSpawnPoint = WeaponModel.transform.GetChild(0);
         // BulletSpawnPoint = WeaponModel.transform.GetChild(1);
         
-            
-        if (BulletSpawnPoint == null /*|| CaseSpawnPoint == null*/)
-        {
-            Debug.LogError("Gun's SpawnPoint is null");
-        }
         OnWeaponSetup?.Invoke(currSO);
     }
     
