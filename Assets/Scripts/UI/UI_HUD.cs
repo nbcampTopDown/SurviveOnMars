@@ -17,18 +17,36 @@ public class UI_HUD : UI_Base<UI_HUD>
 
     private float time = 7200f;
 
+    private float curHP;
+    private float maxHP;
+    private float curStamina;
+    private float maxStamina;
+
+    private Player player;
 
     public override void OnEnable()
     {
         OpenUI();
         bulletMax.text = "40";
-        generateMax.text = "40";
+        generateMax.text = "4";
+    }
+
+    private void Start()
+    {
+        player = Managers.GameSceneManager.Player.GetComponent<Player>();
+
+        maxHP = 100;
+        maxStamina = player.MaxStamina;
+        
     }
 
     private void Update()
     {
-        hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, 0f, Time.deltaTime * 5f);
-        staminaBar.fillAmount = Mathf.Lerp(staminaBar.fillAmount, 0f, Time.deltaTime * 5f);
+        curHP = player.CharacterHealth.Health;
+        curStamina = player.CurrentStamina;
+
+        hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, GetPercentage(curHP,maxHP), Time.deltaTime * 3f);
+        staminaBar.fillAmount = Mathf.Lerp(staminaBar.fillAmount, GetPercentage(curStamina,maxStamina), Time.deltaTime * 5f);
 
         Timer();
 

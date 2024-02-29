@@ -11,5 +11,6 @@ public class GameSceneManager : MonoBehaviour
     {
         _playerPrefab = Resources.Load<GameObject>("Prefabs/PlayerLowPoly");
         Player = Instantiate(_playerPrefab, new Vector3(0, 1, 0), Quaternion.Euler(Vector3.zero));
+        UI_Manager.instance.ShowUI<UI_HUD>();
     }
 }

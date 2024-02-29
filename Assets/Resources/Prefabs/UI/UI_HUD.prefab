@@ -603,7 +603,6 @@ MonoBehaviour:
   xPos: 1
   yPos: 0
   zPos: 1
-  targetTransform: {fileID: 0}
 --- !u!1 &4064876717283516415
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,7 +2132,7 @@ RectTransform:
   - {fileID: 6369145544808951445}
   - {fileID: 34391843721282926}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

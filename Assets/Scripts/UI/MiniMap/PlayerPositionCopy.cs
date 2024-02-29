@@ -7,7 +7,12 @@ public class PlayerPositionCopy : MonoBehaviour
 {
     [SerializeField] private bool xPos,yPos,zPos;
 
-    [SerializeField] private Transform targetTransform;
+    private Transform targetTransform;
+
+    private void Start()
+    {
+        targetTransform = Managers.GameSceneManager.Player.transform;
+    }
 
     void Update()
     {
