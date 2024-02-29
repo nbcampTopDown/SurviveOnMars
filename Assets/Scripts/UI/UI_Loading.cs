@@ -14,6 +14,9 @@ public class UI_Loading : UI_Base<UI_Loading>
 
     [Header("■ Image")]
     [SerializeField] private Image progressBar;
+    [SerializeField] private Image backGround;
+
+    [SerializeField] private Sprite[] backGroundImg;
 
     private string loadSceneName;
 
@@ -22,6 +25,10 @@ public class UI_Loading : UI_Base<UI_Loading>
     public override void OnEnable()
     {
         OpenUI();
+
+        loadSceneName = UI_Manager.instance.sceneName;
+
+        ChangeBackGroundImage();
         LoadScene();
     }
 
@@ -33,7 +40,7 @@ public class UI_Loading : UI_Base<UI_Loading>
     public void LoadScene()
     {
         SceneManager.sceneLoaded += OnsceneLoaded;
-        loadSceneName = UI_Manager.instance.sceneName;
+
         StartCoroutine(LoadSceneProcess());
     }
 
@@ -90,6 +97,18 @@ public class UI_Loading : UI_Base<UI_Loading>
         if(!isFadein)
         {
             CloseUI();
+        }
+    }
+
+    private void ChangeBackGroundImage()
+    {
+        if(loadSceneName == "KSM_TestScene")
+        {
+            backGround.sprite = backGroundImg[1];
+        }
+        else
+        {
+            backGround.sprite = backGroundImg[0];
         }
     }
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1278632649585845334}
   - component: {fileID: 2742560769004240467}
   m_Layer: 5
-  m_Name: Image
+  m_Name: BackGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e8188a69af1557942a0aa693fc835218, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -325,7 +325,7 @@ RectTransform:
   - {fileID: 956196556065873652}
   - {fileID: 8949550834668926303}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -421,6 +421,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasGroup: {fileID: 851648358783538258}
   progressBar: {fileID: 4342627109676963475}
+  backGround: {fileID: 2742560769004240467}
+  backGroundImg:
+  - {fileID: 21300000, guid: e8188a69af1557942a0aa693fc835218, type: 3}
+  - {fileID: 21300000, guid: 45d5f3f372a3b4047a4830636bd5b419, type: 3}
 --- !u!1 &2600620030465568810
 GameObject:
   m_ObjectHideFlags: 0
