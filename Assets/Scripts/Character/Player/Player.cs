@@ -77,7 +77,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public bool TryUseWeapon()
     {
-        if (_canFire && Managers.Player.currAmmo > 0)
+        if (_canFire && Managers.PlayerStats.currAmmo > 0)
         {
             _canFire = false;
             StartCoroutine(Attack());
@@ -90,7 +90,7 @@ public class Player : MonoBehaviour, IDamageable
     private IEnumerator Attack()
     {
         MuzzleFlash.Play();
-        Managers.Attack.UseWeapon(dir);
+        Managers.Attack.UseWeapon();
         var rps = Managers.PlayerStats.W_FireRate / 60f;
         yield return new WaitForSeconds(1f / rps);
         _canFire = true;

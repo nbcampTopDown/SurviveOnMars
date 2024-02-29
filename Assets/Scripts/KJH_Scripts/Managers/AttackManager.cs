@@ -49,10 +49,9 @@ public class AttackManager : MonoBehaviour
 
     public void UseWeapon()
     {
-        if (currAmmo > 0 && BulletSpawnPoint != null)
+        if (Managers.PlayerStats.currAmmo > 0 && BulletSpawnPoint != null)
         {
-            currAmmo--;
-            dir.y = BulletSpawnPoint.position.y;
+            Managers.PlayerStats.currAmmo--;
             
             currWeapon.Attack(BulletSpawnPoint.position, BulletSpawnPoint.rotation);
             // currWeapon.SpawnCase(CaseSpawnPoint);
@@ -61,14 +60,14 @@ public class AttackManager : MonoBehaviour
 
     public void Reload()
     {
-        Managers.Attack.currAmmo = Managers.PlayerStats.W_Ammo;
+        Managers.PlayerStats.currAmmo = Managers.PlayerStats.W_Ammo;
     }
 
     public void UseGrenade()
     {
-        if (Managers.Player.hasGrenades > 0)
+        if (Managers.PlayerStats.hasGrenades > 0)
         {
-            Managers.Player.hasGrenades--;
+            Managers.PlayerStats.hasGrenades--;
             
             Bullet_Grenade bullet_Grenade = Managers.RM.Instantiate("Weapon/Projectiles/Bullet_Grenade").GetComponent<Bullet_Grenade>();
             bullet_Grenade.Setup(BulletSpawnPoint.position, BulletSpawnPoint.rotation, 50, 10);
