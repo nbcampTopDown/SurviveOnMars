@@ -17,7 +17,7 @@ public class WeaponSO : ScriptableObject
 
     [Header("Stat")] 
     public float atk; // 무기 대미지
-    public float fireRate; // 무기 연사속도
+    public float fireRatePerMinute; // 무기 연사속도
     public float bulletSpeed; // 탄환 이동속도
     public float bulletSpread; // 탄퍼짐 정도 (명중률)
     public int Ammo; // 무기 장탄 수

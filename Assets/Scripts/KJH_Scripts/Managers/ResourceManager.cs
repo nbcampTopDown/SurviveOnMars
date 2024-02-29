@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResourceManager
+public class ResourceManager : MonoBehaviour
 {
     public T Load<T>(string path) where T : UnityEngine.Object
     {

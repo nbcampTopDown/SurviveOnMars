@@ -2,26 +2,27 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CharacterHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
-    private float _health;
+    public float Health { get; private set; }
     public event Action OnDie;
 
-    public bool IsDead => _health == 0;
+    public bool IsDead => Health == 0;
 
     private void Start()
     {
-        _health = maxHealth;
+        Health = maxHealth;
     }
 
     public void TakeDamage(float damage)
     {
-        if (_health == 0) return;
-        _health = Mathf.Max(_health - damage, 0);
+        if (Health == 0) return;
+        Health = Mathf.Max(Health - damage, 0);
 
-        if (_health == 0)
+        if (IsDead)
             OnDie?.Invoke();
     }
 }

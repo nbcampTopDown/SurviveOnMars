@@ -54,7 +54,7 @@ public class TempAttackControll : MonoBehaviour
         
         //연사속도 체크
         fireDelay += Time.deltaTime;
-        isFireReady = Managers.Player.W_FireRate < fireDelay;
+        isFireReady = Managers.PlayerStats.W_FireRate < fireDelay;
         
         //고개 회전
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);

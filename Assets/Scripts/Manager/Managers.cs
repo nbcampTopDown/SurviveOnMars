@@ -4,49 +4,69 @@ using UnityEngine;
 
 public class Managers : MonoBehaviour
 {
-    static Managers s_instance;
-    static Managers Instance { get { Init(); return s_instance; } }
+    private static Managers _instance;
+    public static Managers Instance { get { Initialize(); return _instance; } }
     
-    PoolManager _poolManager = new PoolManager();
-    ResourceManager _resource = new ResourceManager();
-    PlayerStatsManager _playerStats = new PlayerStatsManager();
-    AttackManager _attackManager = new AttackManager();
+    private PoolManager _poolManager;
+    private ResourceManager _resourceManager;
+    private PlayerStatsManager _playerStatsManager;
+    private AttackManager _attackManager;
     
-    public static PoolManager Pool => Instance?._poolManager;
-    public static ResourceManager RM => Instance?._resource;
-    public static AttackManager Attack => Instance?._attackManager;
-    public static PlayerStatsManager Player => Instance?._playerStats;
+    public static PoolManager Pool => Instance._poolManager;
+    public static ResourceManager RM => Instance._resourceManager;
+    public static AttackManager Attack => Instance._attackManager;
+    public static PlayerStatsManager PlayerStats => Instance._playerStatsManager;
     
-    private void Awake()
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    public static void Execute()
     {
-        Init();
-        //여기는 씬 매니지먼트 없어서 임시
-        Player.Init();
-        Attack.Init();
-        Pool.Init();
-        Player.PlayerSetup();
-        Attack.WeaponSetup();
+        Initialize();
     }
     
-    private static void Init()
+    private static void Initialize()
     {
-        if(s_instance == null)
+        if (_instance == null)
         {
-            GameObject go = GameObject.Find("@Managers");
+            var go = GameObject.Find("@Managers");
 
-            if(go == null)
+            if (go == null)
             {
                 go = new GameObject("@Managers");
                 go.AddComponent<Managers>();
             }
+            
             DontDestroyOnLoad(go);
-            s_instance = go.GetComponent<Managers>();            
+            _instance = go.GetComponent<Managers>();
+
+            if (!go.TryGetComponent(out _instance._poolManager))
+            {
+                _instance._poolManager = go.AddComponent<PoolManager>();
+                Pool.Init();
+            }
+
+            if (!go.TryGetComponent(out _instance._resourceManager))
+            {
+                _instance._resourceManager = go.AddComponent<ResourceManager>();
+            }
+
+            if (!go.TryGetComponent(out _instance._attackManager))
+            {
+                _instance._attackManager = go.AddComponent<AttackManager>();
+                Attack.Init();
+            }
+
+            if (!go.TryGetComponent(out _instance._playerStatsManager))
+            {
+                _instance._playerStatsManager = go.AddComponent<PlayerStatsManager>();
+                PlayerStats.Init();
+                PlayerStats.WeaponSetup();
+            }
         }
     }
 
     public static void Clear()
     {
-        Player.Clear();
+        PlayerStats.Clear();
         Pool.Clear();
     }
 }

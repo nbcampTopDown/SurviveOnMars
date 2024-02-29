@@ -106,7 +106,7 @@ public class PlayerBaseState : IState
 
     private float GetMovementSpeed()
     {
-        var movementSpeed = stateMachine.MovementSpeed * stateMachine.MovementSpeedModifier;
+        var movementSpeed = (stateMachine.MovementSpeed + Managers.PlayerStats.SpeedModifier) * stateMachine.MovementSpeedModifier;
         
         return movementSpeed;
     }

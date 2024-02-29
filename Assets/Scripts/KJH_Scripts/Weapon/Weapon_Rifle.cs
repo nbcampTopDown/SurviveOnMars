@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Weapon_Rifle : IWeapon
 {
-    public void Attack(PlayerStatsManager weaponStats, Vector3 origin, Quaternion rotation)
+    public void Attack(Vector3 origin, Quaternion rotation)
     {
+        var weaponStats = Managers.PlayerStats;
         float bulletRandomSpread = Random.Range(-weaponStats.W_BulletSpread, weaponStats.W_BulletSpread);
         Bullet_Rifle bullet_Rifle = Managers.RM.Instantiate("Weapon/Projectiles/Bullet_Rifle").GetComponent<Bullet_Rifle>();
         var newDir = Quaternion.Euler(RotateVector(rotation.eulerAngles, bulletRandomSpread));
