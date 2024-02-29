@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameManager : Singleton<gameManager>
+public class gameManager : MonoBehaviour
 {
     public event Action GameClear;
     public event Action GameOver;

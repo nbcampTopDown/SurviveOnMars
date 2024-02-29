@@ -10,8 +10,8 @@ public class TimeManager : MonoBehaviour
 
     private void Start()
     {
-        gameManager.Instance.GameClear += StopTimer;
-        gameManager.Instance.GameOver += StopTimer;
+        Managers.GameManager.GameClear += StopTimer;
+        Managers.GameManager.GameOver += StopTimer;
     }
     private void Awake()
     {
