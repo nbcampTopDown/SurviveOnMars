@@ -18,6 +18,8 @@ TagManager:
   - MiniMapCamera
   - 
   - 
+  - Weapon
+  - 
   - 
   - Ground
   - Enemy
