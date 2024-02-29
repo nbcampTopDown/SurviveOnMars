@@ -33,7 +33,7 @@ public class Bullet_Rifle : Bullet
 
     private void OnEnable()
     {
-        StartCoroutine(OnTimeClear(1f));   
+        StartCoroutine(OnTimeClear(0.2f));   
     }
 
     private void OnTriggerEnter(Collider collision)
