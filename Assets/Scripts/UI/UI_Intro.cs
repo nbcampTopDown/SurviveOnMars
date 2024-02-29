@@ -23,7 +23,6 @@ public class UI_Intro : UI_Base<UI_Intro>
         _anyKeyText.DOFade(1.0f, 2).SetDelay(4f).SetLoops(-1, LoopType.Restart);
     }
 
-    // Update is called once per frame
     void Update()
     {
         time += Time.deltaTime;
