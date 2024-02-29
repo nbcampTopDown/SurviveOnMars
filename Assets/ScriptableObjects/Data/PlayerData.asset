@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 5
   <BaseRotationDamping>k__BackingField: 8
-  <WalkSpeedModifier>k__BackingField: 0.5
-  <RunSpeedModifier>k__BackingField: 1.5
+  <WalkSpeedModifier>k__BackingField: 0.7
+  <RunSpeedModifier>k__BackingField: 1.3
+  <MaxStamina>k__BackingField: 100
+  <StaminaRegen>k__BackingField: 20
+  <SprintStaminaCost>k__BackingField: 30
+  <DodgeStaminaCost>k__BackingField: 30

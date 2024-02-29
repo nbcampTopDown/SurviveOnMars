@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEngine.UI.Image;
 
-public class PoolManager
+public class PoolManager : MonoBehaviour
 {
     #region Pool
     class Pool

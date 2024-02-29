@@ -19,7 +19,7 @@ MonoBehaviour:
     \uC790\uB791\uD569\uB2C8\uB2E4."
   weaponType: 0
   atk: 5
-  fireRate: 0.15
+  fireRatePerMinute: 600
   bulletSpeed: 100
   bulletSpread: 2
   Ammo: 40

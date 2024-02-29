@@ -326,7 +326,7 @@ Transform:
   - {fileID: 3871693731075114960}
   - {fileID: 4117221031976954453}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2308849099852376584
 MonoBehaviour:
@@ -352,7 +352,7 @@ MonoBehaviour:
   <PlayerData>k__BackingField: {fileID: 11400000, guid: fc0e36fb24071f946a1914fcea804db7, type: 2}
   <GroundLayerMask>k__BackingField:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 2048
   <MuzzleFlash>k__BackingField: {fileID: 2630721315525792087}
 --- !u!114 &1485572399524147376
 MonoBehaviour:
@@ -654,22 +654,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 287295073866384320}
     m_Modifications:
-    - target: {fileID: 2385380145328315820, guid: 020bb21ceb6d0614aac8d929772a4411, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.999762
-      objectReference: {fileID: 0}
-    - target: {fileID: 2385380145328315820, guid: 020bb21ceb6d0614aac8d929772a4411, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.021814799
-      objectReference: {fileID: 0}
-    - target: {fileID: 2385380145328315820, guid: 020bb21ceb6d0614aac8d929772a4411, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3674506956888681951, guid: 020bb21ceb6d0614aac8d929772a4411, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3766776076145683783, guid: 020bb21ceb6d0614aac8d929772a4411, type: 3}
       propertyPath: m_RootOrder
       value: 0

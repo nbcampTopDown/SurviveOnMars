@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class AttackManager
+public class AttackManager : MonoBehaviour
 {
     private PlayerStatsManager playerStatsManager;
     
@@ -49,17 +49,19 @@ public class AttackManager
 
     public void UseWeapon()
     {
-        if (Managers.Player.currAmmo > 0)
+        if (currAmmo > 0 && BulletSpawnPoint != null)
         {
-            Managers.Player.currAmmo--;
-            currWeapon.Attack(playerStatsManager, BulletSpawnPoint.position, BulletSpawnPoint.rotation);
+            currAmmo--;
+            dir.y = BulletSpawnPoint.position.y;
+            
+            currWeapon.Attack(BulletSpawnPoint.position, BulletSpawnPoint.rotation);
             // currWeapon.SpawnCase(CaseSpawnPoint);
         }
     }
 
     public void Reload()
     {
-        Managers.Player.currAmmo = Managers.Player.W_Ammo;
+        Managers.Attack.currAmmo = Managers.PlayerStats.W_Ammo;
     }
 
     public void UseGrenade()
@@ -77,18 +79,21 @@ public class AttackManager
     {   
         currWeapon = new Weapon_Rifle();
         currSO = Resources.Load<WeaponSO>("Scriptable/WeaponData/Weapon_Rifle");
-        playerStatsManager = Managers.Player;
+        playerStatsManager = Managers.PlayerStats;
         OnWeaponSetup?.Invoke(currSO);
     }
 
-    public void WeaponSetup()
+    public void WeaponSetup(Transform bulletSpawnPoint)
     {
-        BulletSpawnPoint = GameObject.Find("BulletSpawnPoint").transform;
+        BulletSpawnPoint = bulletSpawnPoint;
         // WeaponModel = GameObject.FindGameObjectWithTag("Weapon");
         // CaseSpawnPoint = WeaponModel.transform.GetChild(0);
         // BulletSpawnPoint = WeaponModel.transform.GetChild(1);
         
+        if (BulletSpawnPoint == null /*|| CaseSpawnPoint == null*/)
+        {
+            Debug.LogError("Gun's SpawnPoint is null");
+        }
         OnWeaponSetup?.Invoke(currSO);
     }
-    
 }
