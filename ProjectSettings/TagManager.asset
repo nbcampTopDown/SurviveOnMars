@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnemySpawnPoint
   - Weapon
+  - ProfileCamera
   layers:
   - Default
   - TransparentFX
