@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour, IDamageable
 {
     [field: Header("Animations")] [field: SerializeField] public PlayerAnimationData AnimationData { get; private set; }
     [field: SerializeField] public PlayerSO PlayerData { get; private set; }
     [field: SerializeField] public LayerMask GroundLayerMask { get; private set; }
+    [field: SerializeField] public Transform VirtualCamera { get; private set; }
     
     public Animator Animator { get; private set; }
     public PlayerInput Input { get; private set; }
@@ -16,6 +18,7 @@ public class Player : MonoBehaviour, IDamageable
     public CharacterHealth CharacterHealth { get; private set; }
     
     private PlayerStateMachine _stateMachine;
+    private bool _isDead;
 
     [field: SerializeField] public ParticleSystem MuzzleFlash { get; private set; }
     private float _fireDelay;
@@ -27,9 +30,12 @@ public class Player : MonoBehaviour, IDamageable
     private bool _isStaminaRegen;
     private float _sprintStaminaCost;
     private float _staminaRegen;
-    
-    private void Awake()
+
+    private void Start()
     {
+        VirtualCamera.parent = null;
+        VirtualCamera.rotation = Quaternion.Euler(new Vector3(85, 0, 0));
+        
         AnimationData.Initialize();
         Animator = GetComponentInChildren<Animator>();
         Input = GetComponent<PlayerInput>();
@@ -44,17 +50,18 @@ public class Player : MonoBehaviour, IDamageable
         
         _canFire = true;
         _stateMachine = new PlayerStateMachine(this);
-    }
-    
-    private void Start()
-    {
+        
         _stateMachine.ChangeState(_stateMachine.IdleState);
 
+        Input.PlayerActions.Grenade.started += ThrowGrenade;
         CharacterHealth.OnDie += OnDie;
     }
     
     private void Update()
     {
+        if(_isDead)
+            return;
+        
         _stateMachine.HandleInput();
         _stateMachine.Update();
     }
@@ -72,7 +79,7 @@ public class Player : MonoBehaviour, IDamageable
     private void OnDie()
     {
         Animator.SetTrigger(AnimationData.DeadParameterHash);
-        enabled = false;
+        _isDead = true;
     }
 
     public bool TryUseWeapon()
@@ -148,6 +155,11 @@ public class Player : MonoBehaviour, IDamageable
 
         CurrentStamina -= value;
         return true;
+    }
+
+    private void ThrowGrenade(InputAction.CallbackContext context)
+    {
+        Managers.Attack.UseGrenade();
     }
 
     public void Reloaded()

@@ -10,38 +10,39 @@ public class Bullet_Grenade : Bullet
     private TrailRenderer _trailRenderer;
 
     // [SerializeField] private float _triggerForce = 0.5f;
-    [SerializeField] private float _explosionRadius = 8;
+    [SerializeField] private float _explosionRadius = 2.5f;
     [SerializeField] private float _explosionForce = 1000;
     [SerializeField] private GameObject _particles;
+    private LayerMask _layerMask;
 
     private void Awake()
     {
         _grenadeRb = GetComponent<Rigidbody>();
         _trailRenderer = GetComponent<TrailRenderer>();
-    }
-    private void OnEnable()
-    {
-        OnThrow();
-        StartCoroutine(OnTimeClear());
+        _layerMask = LayerMask.GetMask("Enemy") | LayerMask.GetMask("Player") | LayerMask.GetMask("Default");
     }
 
     public void OnThrow()
     {
-        _grenadeRb.AddForce(transform.forward * 15, ForceMode.Impulse);
+        _grenadeRb.AddForce(transform.forward * 7, ForceMode.Impulse);
         _grenadeRb.AddTorque(Vector3.back * 10, ForceMode.Impulse);
     }
 
     private IEnumerator OnTimeClear()
     {
         yield return new WaitForSeconds(3f);
-        var surroundingObjects = Physics.OverlapSphere(transform.position, _explosionRadius);
+        var surroundingObjects = Physics.OverlapSphere(transform.position, _explosionRadius, _layerMask);
 
         foreach (var obj in surroundingObjects)
         {
-            var rb = obj.GetComponent<Rigidbody>();
-            if (rb == null) continue;
+            if (obj.TryGetComponent<IDamageable>(out var target))
+            {
+                Debug.Log("a");
+                target.TakeDamage(40f);
+            }
 
-            rb.AddExplosionForce(_explosionForce, transform.position, _explosionRadius, 1);
+            if (obj.TryGetComponent<Rigidbody>(out var rb))
+                rb.AddExplosionForce(_explosionForce, transform.position, _explosionRadius, 1);
         }
 
         Instantiate(_particles, transform.position, Quaternion.identity);
@@ -55,6 +56,9 @@ public class Bullet_Grenade : Bullet
 
         transform.position = spawnPos;
         transform.rotation = rotation;
+        
+        OnThrow();
+        StartCoroutine(OnTimeClear());
     }
     
     

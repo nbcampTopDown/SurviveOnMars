@@ -18,9 +18,9 @@ TagManager:
   - MiniMapCamera
   - 
   - 
-  -
-  - Ground
   - 
+  - Ground
+  - Enemy
   - 
   - 
   - 
