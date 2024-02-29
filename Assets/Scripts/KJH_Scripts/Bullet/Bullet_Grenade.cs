@@ -37,7 +37,6 @@ public class Bullet_Grenade : Bullet
         {
             if (obj.TryGetComponent<IDamageable>(out var target))
             {
-                Debug.Log("a");
                 target.TakeDamage(40f);
             }
 
