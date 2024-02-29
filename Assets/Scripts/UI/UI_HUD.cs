@@ -32,8 +32,8 @@ public class UI_HUD : UI_Base<UI_HUD>
 
         Timer();
 
-        generateCurrent.text = Managers.Player.hasGrenades.ToString();
-        bulletCurrent.text = Managers.Player.currAmmo.ToString();
+        generateCurrent.text = Managers.PlayerStats.hasGrenades.ToString();
+        bulletCurrent.text = Managers.PlayerStats.currAmmo.ToString();
 
     }
 
