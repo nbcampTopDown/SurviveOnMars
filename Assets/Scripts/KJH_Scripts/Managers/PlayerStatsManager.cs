@@ -22,6 +22,13 @@ public class PlayerStatsManager: MonoBehaviour
     public float W_BulletSpread { get; private set; }
     public int W_Ammo { get; private set; }
     #endregion
+
+    #region PlayerStats
+
+    public int hasGrenades = 4; //현재 수류탄 수
+    public int currAmmo; //현재 탄약 수
+    
+    #endregion
     
     private void WeaponStatApply(WeaponSO weapon)
     {
@@ -30,18 +37,13 @@ public class PlayerStatsManager: MonoBehaviour
         W_FireRate = weapon.fireRatePerMinute + P_FireRateModifier;
         W_BulletSpread = Mathf.Max(weapon.bulletSpread - P_BulletSpreadModifier, 0.1f);
         W_Ammo = weapon.Ammo + P_AmmoModifier;
+        currAmmo = W_Ammo;
         
         OnWeaponChange?.Invoke();
     }
     
     public void Init()
     {
-        W_Atk = 1;
-        W_FireRate = 1;
-        W_BulletSpeed = 1;
-        W_BulletSpread = 1;
-        W_Ammo = 1;
-        
         Managers.Attack.OnWeaponSetup += WeaponStatApply;
     }
     

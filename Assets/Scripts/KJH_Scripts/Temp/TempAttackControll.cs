@@ -17,6 +17,7 @@ public class TempAttackControll : MonoBehaviour
     private bool IsAttacking;
 
     private bool RDown = false;
+    private bool GDown = false;
 
     public void OnReloadInput(InputAction.CallbackContext context)
     {
@@ -40,6 +41,14 @@ public class TempAttackControll : MonoBehaviour
         }
     }
 
+    public void OnGrenadeInput(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Started)
+        {
+            GDown = true;
+        }
+    }
+
     private void Awake()
     {
         cam = Camera.main;
@@ -51,6 +60,7 @@ public class TempAttackControll : MonoBehaviour
             Managers.Attack.Reload();
             RDown = false;
         }
+        
         
         //연사속도 체크
         fireDelay += Time.deltaTime;
@@ -69,9 +79,14 @@ public class TempAttackControll : MonoBehaviour
         {
             if (isFireReady)
             {
-                Managers.Attack.UseWeapon(dir);
+                Managers.Attack.UseWeapon();
                 fireDelay = 0;
             }
+        }
+        if (GDown)
+        {
+            Managers.Attack.UseGrenade();
+            GDown = false;
         }
     }
 }
