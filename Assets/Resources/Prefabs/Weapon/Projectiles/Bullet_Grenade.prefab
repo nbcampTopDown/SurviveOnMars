@@ -18,15 +18,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -67,6 +67,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -238,7 +242,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 0
-  _explosionRadius: 8
+  _explosionRadius: 2.5
   _explosionForce: 1000
   _particles: {fileID: 1121192042590650, guid: 07a9b3eeec2ee434cbd4673f63a715e4, type: 3}
 --- !u!54 &7737534601215132704
