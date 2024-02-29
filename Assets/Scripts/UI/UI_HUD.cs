@@ -45,7 +45,7 @@ public class UI_HUD : UI_Base<UI_HUD>
         curHP = player.CharacterHealth.Health;
         curStamina = player.CurrentStamina;
 
-        hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, GetPercentage(curHP,maxHP), Time.deltaTime * 5f);
+        hpBar.fillAmount = Mathf.Lerp(hpBar.fillAmount, GetPercentage(curHP,maxHP), Time.deltaTime * 3f);
         staminaBar.fillAmount = Mathf.Lerp(staminaBar.fillAmount, GetPercentage(curStamina,maxStamina), Time.deltaTime * 5f);
 
         Timer();

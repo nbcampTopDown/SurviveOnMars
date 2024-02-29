@@ -89,6 +89,24 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Setting"",
+                    ""type"": ""Button"",
+                    ""id"": ""6e344bed-60f5-4bb5-8cf1-79874f401f8b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Playerinfo"",
+                    ""type"": ""Button"",
+                    ""id"": ""8972f921-685d-4aeb-8e6a-b034d4bec34d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -212,6 +230,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Run"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fd147632-0df4-4924-9752-0baee7665eb3"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Setting"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4471076-4090-46fb-9764-96c6289cb57f"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Playerinfo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -244,6 +284,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Reload = m_Player.FindAction("Reload", throwIfNotFound: true);
         m_Player_Grenade = m_Player.FindAction("Grenade", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
+        m_Player_Setting = m_Player.FindAction("Setting", throwIfNotFound: true);
+        m_Player_Playerinfo = m_Player.FindAction("Playerinfo", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -312,6 +354,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Reload;
     private readonly InputAction m_Player_Grenade;
     private readonly InputAction m_Player_Run;
+    private readonly InputAction m_Player_Setting;
+    private readonly InputAction m_Player_Playerinfo;
     public struct PlayerActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -323,6 +367,8 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Reload => m_Wrapper.m_Player_Reload;
         public InputAction @Grenade => m_Wrapper.m_Player_Grenade;
         public InputAction @Run => m_Wrapper.m_Player_Run;
+        public InputAction @Setting => m_Wrapper.m_Player_Setting;
+        public InputAction @Playerinfo => m_Wrapper.m_Player_Playerinfo;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -353,6 +399,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Run.started += instance.OnRun;
             @Run.performed += instance.OnRun;
             @Run.canceled += instance.OnRun;
+            @Setting.started += instance.OnSetting;
+            @Setting.performed += instance.OnSetting;
+            @Setting.canceled += instance.OnSetting;
+            @Playerinfo.started += instance.OnPlayerinfo;
+            @Playerinfo.performed += instance.OnPlayerinfo;
+            @Playerinfo.canceled += instance.OnPlayerinfo;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -378,6 +430,12 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Run.started -= instance.OnRun;
             @Run.performed -= instance.OnRun;
             @Run.canceled -= instance.OnRun;
+            @Setting.started -= instance.OnSetting;
+            @Setting.performed -= instance.OnSetting;
+            @Setting.canceled -= instance.OnSetting;
+            @Playerinfo.started -= instance.OnPlayerinfo;
+            @Playerinfo.performed -= instance.OnPlayerinfo;
+            @Playerinfo.canceled -= instance.OnPlayerinfo;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -413,5 +471,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnReload(InputAction.CallbackContext context);
         void OnGrenade(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
+        void OnSetting(InputAction.CallbackContext context);
+        void OnPlayerinfo(InputAction.CallbackContext context);
     }
 }
