@@ -30,5 +30,10 @@ public class LoadingTest : MonoBehaviour
             }
 
         }
+
+        if(Input.GetKeyDown(KeyCode.I))
+        {
+            UI_Manager.instance.ShowUI<UI_GameOver>();
+        }
     }
 }
