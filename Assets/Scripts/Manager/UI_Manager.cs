@@ -6,24 +6,25 @@ using UnityEngine;
 
 public class UI_Manager : MonoBehaviour
 {
-    private static UI_Manager _instance;
-    public static UI_Manager instance
-    {
-        get
-        {
-            if(_instance == null)
-            {
-                GameObject go = new GameObject(typeof(UI_Manager).FullName);
-                _instance = go.AddComponent<UI_Manager>();
+    //private static UI_Manager _instance;
+    //public static UI_Manager instance
+    //{
+    //    get
+    //    {
+    //        if(_instance == null)
+    //        {
+    //            GameObject go = new GameObject(typeof(UI_Manager).FullName);
+    //            _instance = go.AddComponent<UI_Manager>();
                 
-                DontDestroyOnLoad(go);
-            }
+    //            DontDestroyOnLoad(go);
+    //        }
 
-            return _instance;
-        }
-    }
+    //        return _instance;
+    //    }
+    //}
 
     Dictionary<string, GameObject> UI_List = new Dictionary<string, GameObject>();
+    Transform _uiManager;
 
     [HideInInspector]public string sceneName;
 
