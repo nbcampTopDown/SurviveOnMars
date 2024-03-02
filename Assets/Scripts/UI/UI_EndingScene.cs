@@ -27,7 +27,7 @@ public class UI_EndingScene : UI_Base<UI_EndingScene>
         yield return new WaitForSeconds(10f);
 
         backGround.DOAnchorPosY(2860f,40f);
-        yield return new WaitForSeconds(43f);
+        yield break;
 
     }
 }

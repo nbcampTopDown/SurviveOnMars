@@ -35,5 +35,10 @@ public class LoadingTest : MonoBehaviour
         {
             Managers.UI_Manager.ShowUI<UI_GameOver>();
         }
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Managers.UI_Manager.ShowUI<UI_EndingScene>();
+        }
     }
 }
