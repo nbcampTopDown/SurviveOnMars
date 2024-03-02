@@ -30,7 +30,7 @@ public class UI_GameClear : UI_Base<UI_GameClear>
         StartCoroutine(TypingText());
         yield return new WaitForSeconds(4f);
 
-        UI_Manager.instance.ShowLoadingUI("KSM_TestScene");
+        Managers.UI_Manager.ShowLoadingUI("KSM_TestScene");
     }
 
     private IEnumerator TypingText()

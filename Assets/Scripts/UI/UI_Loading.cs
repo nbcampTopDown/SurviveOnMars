@@ -26,7 +26,7 @@ public class UI_Loading : UI_Base<UI_Loading>
     {
         OpenUI();
 
-        loadSceneName = UI_Manager.instance.sceneName;
+        loadSceneName = Managers.UI_Manager.sceneName;
 
         ChangeBackGroundImage();
         LoadScene();

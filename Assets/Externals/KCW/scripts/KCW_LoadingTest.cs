@@ -15,13 +15,13 @@ public class KCW_LoadingTest: MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (!UI_Manager.instance.IsAcitve<UI_StoreCanvas>())
+            if (!Managers.UI_Manager.IsAcitve<UI_StoreCanvas>())
             {
-                UI_Manager.instance.ShowUI<UI_StoreCanvas>();
+                Managers.UI_Manager.ShowUI<UI_StoreCanvas>();
             }
             else
             {
-                UI_Manager.instance.HideUI<UI_StoreCanvas>();
+                Managers.UI_Manager.HideUI<UI_StoreCanvas>();
             }
         }
     }
