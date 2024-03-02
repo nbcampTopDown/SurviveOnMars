@@ -87,7 +87,7 @@ public class Managers : MonoBehaviour
             {
                 _instance._gameSceneManager = go.AddComponent<GameSceneManager>();
                 // 임시 코드
-                GameSceneManager.InitializeGameScene();
+                //GameSceneManager.InitializeGameScene();
             }
 
             if (!go.TryGetComponent(out _instance._sceneLoader))
