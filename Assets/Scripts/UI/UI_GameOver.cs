@@ -41,7 +41,7 @@ public class UI_GameOver : UI_Base<UI_GameOver>
 
     private void OnClickContinueButton()
     {
-        UI_Manager.instance.ShowLoadingUI("KSM_TestScene");
+        Managers.UI_Manager.ShowLoadingUI("KSM_TestScene");
     }
 
     private IEnumerator FadeINBackGround()

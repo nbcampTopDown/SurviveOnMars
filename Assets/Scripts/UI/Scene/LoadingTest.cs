@@ -15,25 +15,25 @@ public class LoadingTest : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            UI_Manager.instance.ShowLoadingUI("KSM_StartScene");
+            Managers.UI_Manager.ShowLoadingUI("KSM_StartScene");
         }
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(!UI_Manager.instance.IsAcitve<UI_OptionMain>())
+            if(!Managers.UI_Manager.IsAcitve<UI_OptionMain>())
             {
-                UI_Manager.instance.ShowUI<UI_OptionMain>();
+                Managers.UI_Manager.ShowUI<UI_OptionMain>();
             }
             else
             {
-                UI_Manager.instance.HideUI<UI_OptionMain>();  
+                Managers.UI_Manager.HideUI<UI_OptionMain>();  
             }
 
         }
 
         if(Input.GetKeyDown(KeyCode.I))
         {
-            UI_Manager.instance.ShowUI<UI_GameOver>();
+            Managers.UI_Manager.ShowUI<UI_GameOver>();
         }
     }
 }

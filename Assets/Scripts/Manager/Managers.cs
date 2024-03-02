@@ -15,6 +15,7 @@ public class Managers : MonoBehaviour
     private SceneLoader _sceneLoader;
     private gameManager _gameManager;
     private TimeManager _timeManager;
+    private UI_Manager _uiManager;
     
     public static PoolManager Pool => Instance._poolManager;
     public static ResourceManager RM => Instance._resourceManager;
@@ -26,6 +27,8 @@ public class Managers : MonoBehaviour
     public static gameManager GameManager => Instance._gameManager;
 
     public static TimeManager TimeManager => Instance._timeManager;
+
+    public static UI_Manager UI_Manager => Instance._uiManager;
     
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Execute()
@@ -70,6 +73,11 @@ public class Managers : MonoBehaviour
                 _instance._playerStatsManager = go.AddComponent<PlayerStatsManager>();
                 PlayerStats.Init();
                 PlayerStats.WeaponSetup();
+            }
+
+            if (!go.TryGetComponent(out _instance._uiManager))
+            {
+                _instance._uiManager = go.AddComponent<UI_Manager>();
             }
 
             if (!go.TryGetComponent(out _instance._gameSceneManager))
