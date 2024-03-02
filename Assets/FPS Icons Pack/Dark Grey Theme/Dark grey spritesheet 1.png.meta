@@ -1,79 +1,88 @@
 fileFormatVersion: 2
-guid: 6674e8c43c63e4f4184cbd009379498d
+guid: 2f84b5c8ce2b18549a175522847db7d6
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 21300000
-    second: LT Automatic rifle 6
+    second: DGT Bullet 1
   - first:
       213: 21300002
-    second: LT Automatic rifle 1
+    second: DGT Bullet 2
   - first:
       213: 21300004
-    second: LT Handgun 5
+    second: DGT Bullet 3
   - first:
       213: 21300006
-    second: LT Automatic rifle 5
+    second: DGT Bullet 4
   - first:
       213: 21300008
-    second: LT Semiautomatic rifle 1
+    second: DGT Bullet 5
   - first:
       213: 21300010
-    second: LT Handgun 4
+    second: DGT Bullet 6
   - first:
       213: 21300012
-    second: LT Shotgun 2
+    second: DGT Bullet 7
   - first:
       213: 21300014
-    second: LT Handgun 3
+    second: DGT Bullet 8
   - first:
       213: 21300016
-    second: LT Submachinegun 3
+    second: DGT Bullet 9
   - first:
       213: 21300018
-    second: LT Automatic rifle 2
+    second: DGT Bullet 10
   - first:
       213: 21300020
-    second: LT Sniper 3
+    second: DGT Handgrenade 1
   - first:
       213: 21300022
-    second: LT Handgun 2
+    second: DGT Handgrenade 2
   - first:
       213: 21300024
-    second: LT Submachinegun 1
+    second: DGT Tank 1
   - first:
       213: 21300026
-    second: LT Shotgun 1
+    second: DGT Handgrenade 3
   - first:
       213: 21300028
-    second: LT Handgun 1
+    second: DGT Handgrenade 4
   - first:
       213: 21300030
-    second: LT Rifle 1
+    second: DGT Handgrenade 5
   - first:
       213: 21300032
-    second: LT Rocketlauncher 1
+    second: DGT Handgrenade 6
   - first:
       213: 21300034
-    second: LT Sniper 2
+    second: DGT Handgrenade 7
   - first:
       213: 21300036
-    second: LT Sniper 1
+    second: DGT Handgrenade 8
   - first:
       213: 21300038
-    second: LT Combat knife
+    second: DGT Handgrenade 9
   - first:
       213: 21300040
-    second: LT Automatic shotgun 1
+    second: DGT Tank 2
   - first:
       213: 21300042
-    second: LT Submachinegun 2
+    second: DGT Jet 1
   - first:
       213: 21300044
-    second: LT Automatic rifle 3
+    second: DGT Jet 2
   - first:
       213: 21300046
-    second: LT Automatic rifle 4
+    second: DGT Explosive
+  - first:
+      213: 21300048
+    second: DGT Explosive remote
+  - first:
+      213: 21300050
+    second: DGT Healthpack
+  - first:
+      213: 21300052
+    second: DGT Health
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -234,13 +243,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LT Automatic rifle 6
+      name: DGT Bullet 1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 3567
-        width: 1517
-        height: 508
+        x: 39
+        y: 3449
+        width: 178
+        height: 406
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,13 +264,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 1
+      name: DGT Bullet 2
       rect:
         serializedVersion: 2
-        x: 1663
-        y: 3594
-        width: 1540
-        height: 437
+        x: 247
+        y: 3449
+        width: 186
+        height: 414
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,13 +285,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 5
+      name: DGT Bullet 3
       rect:
         serializedVersion: 2
-        x: 3491
-        y: 3633
-        width: 530
-        height: 398
+        x: 465
+        y: 3449
+        width: 180
+        height: 516
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,13 +306,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 5
+      name: DGT Bullet 4
       rect:
         serializedVersion: 2
-        x: 248
-        y: 2949
-        width: 1381
-        height: 538
+        x: 675
+        y: 3449
+        width: 182
+        height: 566
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,13 +327,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Semiautomatic rifle 1
+      name: DGT Bullet 5
       rect:
         serializedVersion: 2
-        x: 1688
-        y: 3168
-        width: 1683
-        height: 323
+        x: 887
+        y: 3449
+        width: 212
+        height: 572
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,13 +348,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 4
+      name: DGT Bullet 6
       rect:
         serializedVersion: 2
-        x: 3517
-        y: 3193
-        width: 534
-        height: 368
+        x: 47
+        y: 2421
+        width: 164
+        height: 987
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,13 +369,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Shotgun 2
+      name: DGT Bullet 7
       rect:
         serializedVersion: 2
-        x: 1691
-        y: 2880
-        width: 1670
-        height: 281
+        x: 235
+        y: 2421
+        width: 108
+        height: 632
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,13 +390,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 3
+      name: DGT Bullet 8
       rect:
         serializedVersion: 2
-        x: 3399
-        y: 2808
-        width: 668
-        height: 317
+        x: 365
+        y: 2421
+        width: 238
+        height: 488
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,13 +411,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Submachinegun 3
+      name: DGT Bullet 9
       rect:
         serializedVersion: 2
-        x: 16
-        y: 2475
-        width: 743
-        height: 358
+        x: 623
+        y: 2421
+        width: 234
+        height: 522
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,13 +432,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 2
+      name: DGT Bullet 10
       rect:
         serializedVersion: 2
-        x: 775
-        y: 2491
-        width: 854
-        height: 344
+        x: 881
+        y: 2419
+        width: 196
+        height: 612
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -444,13 +453,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Sniper 3
+      name: DGT Handgrenade 1
       rect:
         serializedVersion: 2
-        x: 1663
-        y: 2488
-        width: 1694
-        height: 329
+        x: 3595
+        y: 3396
+        width: 450
+        height: 641
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -465,13 +474,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 2
+      name: DGT Handgrenade 2
       rect:
         serializedVersion: 2
-        x: 3399
-        y: 2331
-        width: 660
-        height: 414
+        x: 3074
+        y: 3372
+        width: 464
+        height: 563
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,13 +495,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Submachinegun 1
+      name: DGT Tank 1
       rect:
         serializedVersion: 2
-        x: 176
-        y: 1967
-        width: 1163
-        height: 462
+        x: 27
+        y: 1831
+        width: 1063
+        height: 499
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,13 +516,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Shotgun 1
+      name: DGT Handgrenade 3
       rect:
         serializedVersion: 2
-        x: 1663
-        y: 2111
-        width: 1628
-        height: 318
+        x: 2563
+        y: 3374
+        width: 462
+        height: 564
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -528,13 +537,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 1
+      name: DGT Handgrenade 4
       rect:
         serializedVersion: 2
-        x: 3453
-        y: 1816
-        width: 626
-        height: 424
+        x: 3572
+        y: 2485
+        width: 425
+        height: 776
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -549,13 +558,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Rifle 1
+      name: DGT Handgrenade 5
       rect:
         serializedVersion: 2
-        x: 1663
-        y: 1792
-        width: 1724
-        height: 249
+        x: 3055
+        y: 2482
+        width: 435
+        height: 778
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -570,13 +579,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Rocketlauncher 1
+      name: DGT Handgrenade 6
       rect:
         serializedVersion: 2
-        x: 1639
-        y: 1391
-        width: 1854
-        height: 354
+        x: 2508
+        y: 2478
+        width: 431
+        height: 763
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -591,13 +600,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Sniper 2
+      name: DGT Handgrenade 7
       rect:
         serializedVersion: 2
-        x: 1663
-        y: 907
-        width: 1702
-        height: 368
+        x: 2013
+        y: 2476
+        width: 425
+        height: 766
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -612,13 +621,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Sniper 1
+      name: DGT Handgrenade 8
       rect:
         serializedVersion: 2
-        x: 1653
-        y: 440
-        width: 1720
-        height: 369
+        x: 3433
+        y: 1668
+        width: 624
+        height: 760
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -633,13 +642,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Combat knife
+      name: DGT Handgrenade 9
       rect:
         serializedVersion: 2
-        x: 1968
-        y: 107
-        width: 849
-        height: 162
+        x: 2722
+        y: 1665
+        width: 610
+        height: 765
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -654,13 +663,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic shotgun 1
+      name: DGT Tank 2
       rect:
         serializedVersion: 2
-        x: 47
-        y: 1484
-        width: 1278
-        height: 483
+        x: 23
+        y: 1248
+        width: 1063
+        height: 497
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -675,13 +684,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Submachinegun 2
+      name: DGT Jet 1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 26
-        width: 1046
-        height: 481
+        x: 127
+        y: 537
+        width: 866
+        height: 652
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,13 +705,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 3
+      name: DGT Jet 2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 990
-        width: 1595
-        height: 494
+        x: 45
+        y: 55
+        width: 1333
+        height: 321
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -717,13 +726,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 4
+      name: DGT Explosive
       rect:
         serializedVersion: 2
-        x: 24
-        y: 507
-        width: 1579
-        height: 482
+        x: 3209
+        y: 858
+        width: 833
+        height: 625
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -733,6 +742,69 @@ TextureImporter:
       bones: []
       spriteID: e4305410000000000800000000000000
       internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DGT Explosive remote
+      rect:
+        serializedVersion: 2
+        x: 2831
+        y: 861
+        width: 330
+        height: 698
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05305410000000000800000000000000
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DGT Healthpack
+      rect:
+        serializedVersion: 2
+        x: 3401
+        y: 97
+        width: 616
+        height: 616
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25305410000000000800000000000000
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DGT Health
+      rect:
+        serializedVersion: 2
+        x: 2857
+        y: 181
+        width: 446
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45305410000000000800000000000000
+      internalID: 21300052
       vertices: []
       indices: 
       edges: []
@@ -748,30 +820,33 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LT Automatic rifle 1: 21300002
-      LT Automatic rifle 2: 21300018
-      LT Automatic rifle 3: 21300044
-      LT Automatic rifle 4: 21300046
-      LT Automatic rifle 5: 21300006
-      LT Automatic rifle 6: 21300000
-      LT Automatic shotgun 1: 21300040
-      LT Combat knife: 21300038
-      LT Handgun 1: 21300028
-      LT Handgun 2: 21300022
-      LT Handgun 3: 21300014
-      LT Handgun 4: 21300010
-      LT Handgun 5: 21300004
-      LT Rifle 1: 21300030
-      LT Rocketlauncher 1: 21300032
-      LT Semiautomatic rifle 1: 21300008
-      LT Shotgun 1: 21300026
-      LT Shotgun 2: 21300012
-      LT Sniper 1: 21300036
-      LT Sniper 2: 21300034
-      LT Sniper 3: 21300020
-      LT Submachinegun 1: 21300024
-      LT Submachinegun 2: 21300042
-      LT Submachinegun 3: 21300016
+      DGT Bullet 1: 21300000
+      DGT Bullet 10: 21300018
+      DGT Bullet 2: 21300002
+      DGT Bullet 3: 21300004
+      DGT Bullet 4: 21300006
+      DGT Bullet 5: 21300008
+      DGT Bullet 6: 21300010
+      DGT Bullet 7: 21300012
+      DGT Bullet 8: 21300014
+      DGT Bullet 9: 21300016
+      DGT Explosive: 21300046
+      DGT Explosive remote: 21300048
+      DGT Handgrenade 1: 21300020
+      DGT Handgrenade 2: 21300022
+      DGT Handgrenade 3: 21300026
+      DGT Handgrenade 4: 21300028
+      DGT Handgrenade 5: 21300030
+      DGT Handgrenade 6: 21300032
+      DGT Handgrenade 7: 21300034
+      DGT Handgrenade 8: 21300036
+      DGT Handgrenade 9: 21300038
+      DGT Health: 21300052
+      DGT Healthpack: 21300050
+      DGT Jet 1: 21300042
+      DGT Jet 2: 21300044
+      DGT Tank 1: 21300024
+      DGT Tank 2: 21300040
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

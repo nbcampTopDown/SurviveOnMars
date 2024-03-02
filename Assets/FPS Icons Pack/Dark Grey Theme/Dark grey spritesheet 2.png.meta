@@ -1,79 +1,79 @@
 fileFormatVersion: 2
-guid: 6674e8c43c63e4f4184cbd009379498d
+guid: 71a7f8669de848e45ba57bda95f3a58e
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 21300000
-    second: LT Automatic rifle 6
+    second: DGT Automatic rifle 6
   - first:
       213: 21300002
-    second: LT Automatic rifle 1
+    second: DGT Automatic rifle 1
   - first:
       213: 21300004
-    second: LT Handgun 5
+    second: DGT Handgun 5
   - first:
       213: 21300006
-    second: LT Automatic rifle 5
+    second: DGT Automatic rifle 5
   - first:
       213: 21300008
-    second: LT Semiautomatic rifle 1
+    second: DGT Semiautomatic rifle 1
   - first:
       213: 21300010
-    second: LT Handgun 4
+    second: DGT Handgun 4
   - first:
       213: 21300012
-    second: LT Shotgun 2
+    second: DGT Shotgun 2
   - first:
       213: 21300014
-    second: LT Handgun 3
+    second: DGT Handgun 3
   - first:
       213: 21300016
-    second: LT Submachinegun 3
+    second: DGT Submachinegun 3
   - first:
       213: 21300018
-    second: LT Automatic rifle 2
+    second: DGT Automatic rifle 2
   - first:
       213: 21300020
-    second: LT Sniper 3
+    second: DGT Sniper 3
   - first:
       213: 21300022
-    second: LT Handgun 2
+    second: DGT Handgun 2
   - first:
       213: 21300024
-    second: LT Submachinegun 1
+    second: DGT Submachinegun 1
   - first:
       213: 21300026
-    second: LT Shotgun 1
+    second: DGT Shotgun 1
   - first:
       213: 21300028
-    second: LT Handgun 1
+    second: DGT Handgun 1
   - first:
       213: 21300030
-    second: LT Rifle 1
+    second: DGT Rifle 1
   - first:
       213: 21300032
-    second: LT Rocketlauncher 1
+    second: DGT Rocketlauncher 1
   - first:
       213: 21300034
-    second: LT Sniper 2
+    second: DGT Sniper 2
   - first:
       213: 21300036
-    second: LT Sniper 1
+    second: DGT Sniper 1
   - first:
       213: 21300038
-    second: LT Combat knife
+    second: DGT Combat knife
   - first:
       213: 21300040
-    second: LT Automatic shotgun 1
+    second: DGT Automatic shotgun 1
   - first:
       213: 21300042
-    second: LT Submachinegun 2
+    second: DGT Submachinegun 2
   - first:
       213: 21300044
-    second: LT Automatic rifle 3
+    second: DGT Automatic rifle 3
   - first:
       213: 21300046
-    second: LT Automatic rifle 4
+    second: DGT Automatic rifle 4
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -234,7 +234,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LT Automatic rifle 6
+      name: DGT Automatic rifle 6
       rect:
         serializedVersion: 2
         x: 16
@@ -255,7 +255,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 1
+      name: DGT Automatic rifle 1
       rect:
         serializedVersion: 2
         x: 1663
@@ -276,7 +276,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 5
+      name: DGT Handgun 5
       rect:
         serializedVersion: 2
         x: 3491
@@ -297,7 +297,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 5
+      name: DGT Automatic rifle 5
       rect:
         serializedVersion: 2
         x: 248
@@ -318,7 +318,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Semiautomatic rifle 1
+      name: DGT Semiautomatic rifle 1
       rect:
         serializedVersion: 2
         x: 1688
@@ -339,7 +339,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 4
+      name: DGT Handgun 4
       rect:
         serializedVersion: 2
         x: 3517
@@ -360,7 +360,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Shotgun 2
+      name: DGT Shotgun 2
       rect:
         serializedVersion: 2
         x: 1691
@@ -381,7 +381,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 3
+      name: DGT Handgun 3
       rect:
         serializedVersion: 2
         x: 3399
@@ -402,7 +402,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Submachinegun 3
+      name: DGT Submachinegun 3
       rect:
         serializedVersion: 2
         x: 16
@@ -423,7 +423,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 2
+      name: DGT Automatic rifle 2
       rect:
         serializedVersion: 2
         x: 775
@@ -444,7 +444,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Sniper 3
+      name: DGT Sniper 3
       rect:
         serializedVersion: 2
         x: 1663
@@ -465,7 +465,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 2
+      name: DGT Handgun 2
       rect:
         serializedVersion: 2
         x: 3399
@@ -486,7 +486,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Submachinegun 1
+      name: DGT Submachinegun 1
       rect:
         serializedVersion: 2
         x: 176
@@ -507,7 +507,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Shotgun 1
+      name: DGT Shotgun 1
       rect:
         serializedVersion: 2
         x: 1663
@@ -528,7 +528,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Handgun 1
+      name: DGT Handgun 1
       rect:
         serializedVersion: 2
         x: 3453
@@ -549,7 +549,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Rifle 1
+      name: DGT Rifle 1
       rect:
         serializedVersion: 2
         x: 1663
@@ -570,7 +570,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Rocketlauncher 1
+      name: DGT Rocketlauncher 1
       rect:
         serializedVersion: 2
         x: 1639
@@ -591,7 +591,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Sniper 2
+      name: DGT Sniper 2
       rect:
         serializedVersion: 2
         x: 1663
@@ -612,7 +612,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Sniper 1
+      name: DGT Sniper 1
       rect:
         serializedVersion: 2
         x: 1653
@@ -633,7 +633,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Combat knife
+      name: DGT Combat knife
       rect:
         serializedVersion: 2
         x: 1968
@@ -654,7 +654,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic shotgun 1
+      name: DGT Automatic shotgun 1
       rect:
         serializedVersion: 2
         x: 47
@@ -675,7 +675,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Submachinegun 2
+      name: DGT Submachinegun 2
       rect:
         serializedVersion: 2
         x: 17
@@ -696,7 +696,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 3
+      name: DGT Automatic rifle 3
       rect:
         serializedVersion: 2
         x: 18
@@ -717,7 +717,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LT Automatic rifle 4
+      name: DGT Automatic rifle 4
       rect:
         serializedVersion: 2
         x: 24
@@ -748,30 +748,30 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LT Automatic rifle 1: 21300002
-      LT Automatic rifle 2: 21300018
-      LT Automatic rifle 3: 21300044
-      LT Automatic rifle 4: 21300046
-      LT Automatic rifle 5: 21300006
-      LT Automatic rifle 6: 21300000
-      LT Automatic shotgun 1: 21300040
-      LT Combat knife: 21300038
-      LT Handgun 1: 21300028
-      LT Handgun 2: 21300022
-      LT Handgun 3: 21300014
-      LT Handgun 4: 21300010
-      LT Handgun 5: 21300004
-      LT Rifle 1: 21300030
-      LT Rocketlauncher 1: 21300032
-      LT Semiautomatic rifle 1: 21300008
-      LT Shotgun 1: 21300026
-      LT Shotgun 2: 21300012
-      LT Sniper 1: 21300036
-      LT Sniper 2: 21300034
-      LT Sniper 3: 21300020
-      LT Submachinegun 1: 21300024
-      LT Submachinegun 2: 21300042
-      LT Submachinegun 3: 21300016
+      DGT Automatic rifle 1: 21300002
+      DGT Automatic rifle 2: 21300018
+      DGT Automatic rifle 3: 21300044
+      DGT Automatic rifle 4: 21300046
+      DGT Automatic rifle 5: 21300006
+      DGT Automatic rifle 6: 21300000
+      DGT Automatic shotgun 1: 21300040
+      DGT Combat knife: 21300038
+      DGT Handgun 1: 21300028
+      DGT Handgun 2: 21300022
+      DGT Handgun 3: 21300014
+      DGT Handgun 4: 21300010
+      DGT Handgun 5: 21300004
+      DGT Rifle 1: 21300030
+      DGT Rocketlauncher 1: 21300032
+      DGT Semiautomatic rifle 1: 21300008
+      DGT Shotgun 1: 21300026
+      DGT Shotgun 2: 21300012
+      DGT Sniper 1: 21300036
+      DGT Sniper 2: 21300034
+      DGT Sniper 3: 21300020
+      DGT Submachinegun 1: 21300024
+      DGT Submachinegun 2: 21300042
+      DGT Submachinegun 3: 21300016
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
