@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class UI_UpgradeControl : MonoBehaviour
 {
-    [SerializeField] private int a;
+    public List<GameObject> UISlotPrefabs = new List<GameObject>();
+    public List<GameObject> UISlot = new List<GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
