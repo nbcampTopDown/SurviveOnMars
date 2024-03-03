@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 838653930795880211}
   - component: {fileID: 1830448159096776370}
   - component: {fileID: 4497932971426148235}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Bullet_Rifle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7772372662964821972}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
