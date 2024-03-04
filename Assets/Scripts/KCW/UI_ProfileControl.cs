@@ -13,4 +13,8 @@ public class UI_ProfileControl : MonoBehaviour
 
     public static UI_ProfileControl Instance;
 
+    private void Start()
+    {
+        Instance = this;
+    }
 }

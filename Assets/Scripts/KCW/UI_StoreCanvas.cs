@@ -29,20 +29,26 @@ public class UI_StoreCanvas: UI_Base<UI_StoreCanvas>
 
     private void Start()
     {
-        OnProfileButton();
         profileTabBtn.onClick.AddListener(OnProfileButton);
         storyTabBtn.onClick.AddListener(OnStoryButton);
         upgradeTabBtn.onClick.AddListener(OnUpgradeButton);
         CloseBtn.onClick.AddListener(OnClickExitButton);
+        StartCoroutine(OnFirstUI());
+    }
+
+    IEnumerator OnFirstUI()
+    {
+        yield return new WaitForSeconds(0.1f);
+        OnProfileButton();
     }
 
     public void OnProfileButton()
     {
-        StoreDataManager.Instance.CheckPlayer();
         storyObj.SetActive(false);
         upgradeObj.SetActive(false);
         profileObj.SetActive(true);
         tabselect = TabSelection.profile;
+        StoreDataManager.Instance.CheckPlayer();
     }
 
     public void OnStoryButton()
