@@ -72,5 +72,6 @@ public class UI_StoreCanvas: UI_Base<UI_StoreCanvas>
     private void OnClickExitButton()
     {
         CloseUI();
+        Time.timeScale = 1f;
     }
 }

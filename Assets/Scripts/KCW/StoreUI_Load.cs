@@ -16,6 +16,7 @@ public class StoreUI_Load: MonoBehaviour
                 try
                 {
                     StoreDataManager.Instance.CheckPlayer();
+                    Time.timeScale = 0f;
                 }
                 catch
                 {
