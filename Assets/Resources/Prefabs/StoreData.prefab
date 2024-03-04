@@ -50,3 +50,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 48dfa09a477657147b0a98bf8e73c7a3, type: 2}
   - {fileID: 11400000, guid: f46b64a7a727a6b40bdd71f7127bfd4c, type: 2}
   - {fileID: 11400000, guid: 37d43ea06ac48b54ebef6e990dcfbd1c, type: 2}
+  weaponicon:
+  - {fileID: 21300002, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
+  - {fileID: 21300024, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
+  - {fileID: 21300026, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
+  - {fileID: 21300026, guid: 2f84b5c8ce2b18549a175522847db7d6, type: 3}
+  money: 1000000
