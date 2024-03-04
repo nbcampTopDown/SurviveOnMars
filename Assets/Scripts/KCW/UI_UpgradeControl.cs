@@ -63,6 +63,7 @@ public class UI_UpgradeControl : MonoBehaviour
                     UISlot.Add(Slot);
                 }
                 iconCount++;
+                ButtonCount = 0;
             }
             
         }
@@ -86,6 +87,7 @@ public class UI_UpgradeControl : MonoBehaviour
                     StoreDataManager.Instance.itemList[itemListNumber].purchasedData[itemDatasNumber] = true;
                     StoreDataManager.Instance.OnChangeStat(itemListNumber, itemToChange);
                     Information.GetComponent<Button>().onClick.RemoveListener(OnPurchase);
+                    Information.GetComponent<Button>().enabled = false;
                 }
             }
         }
@@ -113,6 +115,7 @@ public class UI_UpgradeControl : MonoBehaviour
 
                 if (StoreDataManager.Instance.itemList[itemListNumber].purchasedData[itemDatasNumber])
                 {
+                    Information.GetComponentInChildren<Button>().enabled = true;
                     Information.GetComponentInChildren<Button>().onClick.AddListener(OnPurchase);
                 }
                 Information.name = gameObject.transform.name;

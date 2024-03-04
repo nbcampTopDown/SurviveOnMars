@@ -5,19 +5,12 @@ using UnityEngine.UI;
 
 public class UI_ProfileControl : MonoBehaviour
 {
-    [SerializeField] private Text playerhp;
-    [SerializeField] private Text playerstamina;
-    [SerializeField] private Text weaponAtkText;
-    [SerializeField] private Text weaponFireRateText;
+    [SerializeField] public Text playerhp;
+    [SerializeField] public Text playerstamina;
+    [SerializeField] public Text weaponAtkText;
+    [SerializeField] public Text weaponFireRateText;
+    [SerializeField] public Text moneyText;
 
-    private void Start()
-    {
-        GameObject player = Managers.GameSceneManager.Player;
-        var playerStatScript = player.GetComponent<Player>();
+    public static UI_ProfileControl Instance;
 
-        playerhp.text = playerStatScript.CharacterHealth.Health.ToString();
-        playerhp.text = playerStatScript.CurrentStamina.ToString();
-        weaponAtkText.text = Managers.PlayerStats.W_Atk.ToString();
-        weaponFireRateText.text = Managers.PlayerStats.W_FireRate.ToString();
-    }
 }

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6247279020024207544
 MonoBehaviour:
@@ -50,6 +50,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 48dfa09a477657147b0a98bf8e73c7a3, type: 2}
   - {fileID: 11400000, guid: f46b64a7a727a6b40bdd71f7127bfd4c, type: 2}
   - {fileID: 11400000, guid: 37d43ea06ac48b54ebef6e990dcfbd1c, type: 2}
+  weaponData:
+  - {fileID: 11400000, guid: 41f99fcd533ff974c8afb516aa813036, type: 2}
   weaponicon:
   - {fileID: 21300002, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
   - {fileID: 21300024, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}

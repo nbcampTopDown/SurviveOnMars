@@ -534,26 +534,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoreData
       objectReference: {fileID: 0}
-    - target: {fileID: 6247279020024207544, guid: b17a37fbc9a65934d80a02c7a2a7a3eb, type: 3}
-      propertyPath: weaponData.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6247279020024207544, guid: b17a37fbc9a65934d80a02c7a2a7a3eb, type: 3}
-      propertyPath: weaponData.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 41f99fcd533ff974c8afb516aa813036, type: 2}
-    - target: {fileID: 6247279020024207544, guid: b17a37fbc9a65934d80a02c7a2a7a3eb, type: 3}
-      propertyPath: weaponData.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 41f99fcd533ff974c8afb516aa813036, type: 2}
-    - target: {fileID: 6247279020024207544, guid: b17a37fbc9a65934d80a02c7a2a7a3eb, type: 3}
-      propertyPath: weaponData.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: 41f99fcd533ff974c8afb516aa813036, type: 2}
-    - target: {fileID: 6247279020024207544, guid: b17a37fbc9a65934d80a02c7a2a7a3eb, type: 3}
-      propertyPath: weaponData.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 41f99fcd533ff974c8afb516aa813036, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
