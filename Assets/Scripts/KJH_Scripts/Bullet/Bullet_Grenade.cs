@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Bullet_Grenade : Bullet
@@ -31,9 +32,11 @@ public class Bullet_Grenade : Bullet
     private IEnumerator OnTimeClear()
     {
         yield return new WaitForSeconds(2f);
-        var surroundingObjects = Physics.OverlapSphere(transform.position, _explosionRadius, _layerMask);
-
-        foreach (var obj in surroundingObjects)
+        var surroundObjects = new HashSet<GameObject>(
+            Physics.OverlapSphere(transform.position, _explosionRadius, _layerMask)
+            .Select(coll => coll.gameObject));
+        
+        foreach (var obj in surroundObjects)
         {
             if (obj.TryGetComponent<IDamageable>(out var target))
             {

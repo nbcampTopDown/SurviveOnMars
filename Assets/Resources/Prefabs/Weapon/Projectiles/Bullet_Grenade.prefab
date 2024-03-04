@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bullet_Grenade
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31f3d55055bba9443b8439d272a0da30, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -241,8 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
-  _explosionSound: {fileID: 0}
+    m_Bits: 64
   _explosionRadius: 2.5
   _explosionForce: 1000
   _particles: {fileID: 1121192042590650, guid: 07a9b3eeec2ee434cbd4673f63a715e4, type: 3}

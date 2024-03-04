@@ -5,41 +5,36 @@ using UnityEngine;
 
 public class TimeManager : MonoBehaviour
 {
-    public static TimeManager timeIns;
-    public int totalTime = 0;
-
-    private void Start()
-    {
-        Managers.GameManager.GameClear += StopTimer;
-        Managers.GameManager.GameOver += StopTimer;
-    }
-    private void Awake()
-    {
-        timeIns = this;//싱글톤화
-        Time.timeScale = 1.0f;
-        StartCoroutine(GameScheduler());
-    }
-
-    //gamestart 이후 특정 조건 이후 시간이 진행되도록 설정을 위해 따로 update나 start에서 시작하지는 않음 
-    public IEnumerator GameScheduler()
-    {
-        yield return new WaitForSeconds(1f);
-        totalTime++;
-        StartCoroutine(GameScheduler());
-    }
-    public void StopTimer()
-    {
-        Time.timeScale = 0f;
-    }
-
+    public float totalTime { get; private set; } = 600f;
+    private Coroutine _scheduler;
+    
     public void StartTimer()
     {
-        Time.timeScale = 1f;
+        totalTime = 600f;
+        _scheduler = StartCoroutine(GameScheduler());
     }
 
-    public void ResetTimer()
+    private IEnumerator GameScheduler()
     {
-        StopAllCoroutines();
-        totalTime = 0;
+        var wait = new WaitForFixedUpdate();
+        
+        while (totalTime >= 0f)
+        {
+            totalTime -= Time.fixedDeltaTime;
+            yield return wait;
+        }
+
+        totalTime = 0f;
+        yield return new WaitForSeconds(2f);
+        totalTime = 90f;
+
+        while (totalTime >= 0f)
+        {
+            totalTime -= Time.fixedDeltaTime;
+            yield return wait;
+        }
+
+        Managers.GameManager.LandingShip();
+        totalTime = 0f;
     }
 }

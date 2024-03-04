@@ -5,6 +5,7 @@ public enum Scenes
 {
     Title = 0,
     Game,
+    Ending,
 }
 
 public class SceneLoader : MonoBehaviour
