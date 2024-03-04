@@ -56,6 +56,7 @@ public class Player : MonoBehaviour, IDamageable
         _stateMachine.ChangeState(_stateMachine.IdleState);
 
         Input.PlayerActions.Grenade.started += ThrowGrenade;
+        Input.PlayerActions.Setting.started += ShowOptionUI;
         CharacterHealth.OnDie += OnDie;
 
         _reloadClip = Managers.RM.Load<AudioClip>("Sounds/Rifle_Reloading");
@@ -84,6 +85,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         Animator.SetTrigger(AnimationData.DeadParameterHash);
         isDead = true;
+        Managers.UI_Manager.ShowUI<UI_GameOver>();
     }
 
     public bool TryUseWeapon()
@@ -164,6 +166,18 @@ public class Player : MonoBehaviour, IDamageable
     private void ThrowGrenade(InputAction.CallbackContext context)
     {
         Managers.Attack.UseGrenade();
+    }
+
+    private void ShowOptionUI(InputAction.CallbackContext context)
+    {
+        if(!Managers.UI_Manager.IsAcitve<UI_OptionMain>())
+        {
+            Managers.UI_Manager.ShowUI<UI_OptionMain>();
+        }
+        else
+        {
+            Managers.UI_Manager.HideUI<UI_OptionMain>();
+        }
     }
 
     public void Reloaded()

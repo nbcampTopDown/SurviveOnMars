@@ -26,11 +26,13 @@ public class SceneLoader : MonoBehaviour
     
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Managers.Clear();
+
         switch (scene.buildIndex)
         {
             // StartScene
             case 0:
-                Debug.Log("Scene Loaded 0");
+                Managers.UI_Manager.ShowUI<UI_Intro>();
                 break;
             // GameScene
             case 1:
