@@ -39,6 +39,30 @@ public class ResourceManager : MonoBehaviour
 
         return go;
     }
+    
+    public List<GameObject> Instantiate(string path, int nums, Transform parent = null)
+    {
+        GameObject origin = Load<GameObject>($"Prefabs/{path}");
+        var list = new List<GameObject>();
+        
+        if (origin == null)
+        {
+            Debug.Log($"오브젝트 불러오기에 실패했습니다. : {path}");
+            return null;
+        }
+
+        if (origin.GetComponent<Poolable>() != null)
+        {
+            for (var i = 0; i < nums; i++)
+            {
+                list.Add(Managers.Pool.Pop(origin, parent).gameObject);
+            }
+
+            return list;
+        }
+
+        return null;
+    }
 
     public void Destroy(GameObject go)
     {

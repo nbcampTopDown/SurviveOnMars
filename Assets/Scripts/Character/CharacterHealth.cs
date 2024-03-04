@@ -6,7 +6,7 @@ using UnityEngine.Serialization;
 
 public class CharacterHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
+    [field: SerializeField] public int maxHealth { get; private set; } = 100;
     public float Health { get; set; }
     public event Action OnDie;
 

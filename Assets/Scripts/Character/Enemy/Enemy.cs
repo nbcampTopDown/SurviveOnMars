@@ -2,18 +2,21 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
     [field: SerializeField] public CharacterHealth CharacterHealth { get; private set; }
+    [field: SerializeField] public float DefaultSpeed { get; private set; }
     [field: SerializeField] public float IdleMoveSpeedMultiplier { get; private set; }
     [field: SerializeField] public float IdleLocationRadius { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
+    [field: SerializeField] private NavMeshAgent agent;
     public Transform Player { get; set; }
+    public Nest Nest { get; set; }
     public float updateRate = 0.1f;
     private Collider _collider;
-    private NavMeshAgent _agent;
     private Coroutine _followCoroutine;
 
     public EnemyState defaultState;
@@ -35,36 +38,38 @@ public class Enemy : MonoBehaviour, IDamageable
     private void Awake()
     {
         _collider = GetComponent<Collider>();
-        _agent = GetComponent<NavMeshAgent>();
         Player = Managers.GameSceneManager.Player.transform;
         
         OnStateChangeEvent += HandleStateChange;
-        
-        State = defaultState;
     }
 
     private void Update()
     {
-        Animator.SetFloat(_speedHash, _agent.velocity.magnitude / 3.5f, 0.5f, Time.deltaTime);
+        Animator.SetFloat(_speedHash, agent.velocity.magnitude / 3.5f, 0.5f, Time.deltaTime);
     }
 
     private void OnEnable()
     {
-        CharacterHealth.Health = 100;
+        CharacterHealth.Health = CharacterHealth.maxHealth;
         CharacterHealth.OnDie += OnDie;
         _collider.enabled = true;
-        Spawn();
+        Spawn(transform.position);
     }
 
     private void OnDisable()
     {
+        StopCoroutine(_followCoroutine);
         State = EnemyState.Spawn;
         _state = defaultState;
     }
 
-    public void Spawn()
+    public void Spawn(Vector3 position)
     {
+        agent.enabled = false;
+        transform.position = position;
         OnStateChangeEvent?.Invoke(EnemyState.Spawn, defaultState);
+        agent.enabled = true;
+        State = defaultState;
     }
 
     private void HandleStateChange(EnemyState oldState, EnemyState newState)
@@ -77,17 +82,13 @@ public class Enemy : MonoBehaviour, IDamageable
             StopCoroutine(_followCoroutine);
         }
 
-        if (oldState == EnemyState.Idle)
-        {
-            _agent.speed /= IdleMoveSpeedMultiplier;
-        }
-
         switch (newState)
         {
             case EnemyState.Idle:
                 _followCoroutine = StartCoroutine(DoIdleMotion());
                 break;
             case EnemyState.Chase:
+                agent.speed = DefaultSpeed;
                 _followCoroutine = StartCoroutine(FollowTarget());
                 break;
         }
@@ -98,24 +99,24 @@ public class Enemy : MonoBehaviour, IDamageable
         var wait = new WaitForSeconds(updateRate);
         var stopping = new WaitForSeconds(2f);
 
-        _agent.speed *= IdleMoveSpeedMultiplier;
+        agent.speed = DefaultSpeed / IdleMoveSpeedMultiplier;
 
         while (true)
         {
-            if (!_agent.enabled || !_agent.isOnNavMesh)
+            if (!agent.enabled || !agent.isOnNavMesh)
             {
                 yield return wait;
             }
-            else if(_agent.remainingDistance <= _agent.stoppingDistance)
+            else if(agent.remainingDistance <= agent.stoppingDistance)
             {
                 yield return stopping;
                 var point = Random.insideUnitCircle * IdleLocationRadius;
                 NavMeshHit hit;
 
-                if (NavMesh.SamplePosition(_agent.transform.position + new Vector3(point.x, 0, point.y), out hit, 2f,
-                        _agent.areaMask))
+                if (NavMesh.SamplePosition(agent.transform.position + new Vector3(point.x, 0, point.y), out hit, 2f,
+                        agent.areaMask))
                 {
-                    _agent.SetDestination(hit.position);
+                    agent.SetDestination(hit.position);
                 }
             }
             yield return wait;
@@ -128,9 +129,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
         while (gameObject.activeSelf)
         {
-            if (_agent.enabled)
+            if (agent.enabled)
             {
-                _agent.SetDestination(Player.position);
+                agent.SetDestination(Player.position);
             }
 
             yield return wait;
@@ -139,6 +140,10 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+        if (State == EnemyState.Idle)
+        {
+            Nest.UnderAttack();
+        }
         CharacterHealth.TakeDamage(damage);
     }
 
@@ -146,8 +151,16 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         CharacterHealth.OnDie -= OnDie;
         StopCoroutine(_followCoroutine);
-        _agent.SetDestination(this.transform.position);
+        agent.SetDestination(this.transform.position);
         _collider.enabled = false;
         Animator.SetTrigger(_dieHash);
+        Nest.chasingEnemies.Remove(this);
+        StartCoroutine(RemoveBody());
+    }
+
+    private IEnumerator RemoveBody()
+    {
+        yield return new WaitForSeconds(2f);
+        Managers.RM.Destroy(gameObject);
     }
 }
