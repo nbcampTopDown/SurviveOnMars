@@ -8,7 +8,7 @@ public class Bullet_Grenade : Bullet
     // private Rigidbody grenade_rb;
     private Rigidbody _grenadeRb;
     private TrailRenderer _trailRenderer;
-
+    
     // [SerializeField] private float _triggerForce = 0.5f;
     [SerializeField] private float _explosionRadius = 2.5f;
     [SerializeField] private float _explosionForce = 1000;
@@ -55,7 +55,6 @@ public class Bullet_Grenade : Bullet
 
         transform.position = spawnPos;
         transform.rotation = rotation;
-        
         OnThrow();
         StartCoroutine(OnTimeClear());
     }

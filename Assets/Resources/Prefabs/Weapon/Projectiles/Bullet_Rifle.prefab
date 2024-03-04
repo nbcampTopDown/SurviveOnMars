@@ -214,6 +214,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 4096
+  _clip: {fileID: 0}
 --- !u!114 &1830448159096776370
 MonoBehaviour:
   m_ObjectHideFlags: 0
