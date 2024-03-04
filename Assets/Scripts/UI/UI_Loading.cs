@@ -102,7 +102,7 @@ public class UI_Loading : UI_Base<UI_Loading>
 
     private void ChangeBackGroundImage()
     {
-        if(loadSceneName == "KSM_TestScene")
+        if(loadSceneName == "EndingScene")
         {
             backGround.sprite = backGroundImg[1];
         }

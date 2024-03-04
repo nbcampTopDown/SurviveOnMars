@@ -30,7 +30,7 @@ public class UI_GameClear : UI_Base<UI_GameClear>
         StartCoroutine(TypingText());
         yield return new WaitForSeconds(6f);
 
-        Managers.UI_Manager.ShowUI<UI_EndingScene>();
+        Managers.UI_Manager.ShowLoadingUI("EndingScene");
     }
 
     private IEnumerator TypingText()

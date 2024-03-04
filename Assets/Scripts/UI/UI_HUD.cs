@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UI_HUD : UI_Base<UI_HUD>
 {
+    [SerializeField] private Image timerFrame;
     [SerializeField] private Image hpBar;
     [SerializeField] private Image staminaBar;
     [SerializeField] private Image weaponImg;
@@ -16,7 +17,7 @@ public class UI_HUD : UI_Base<UI_HUD>
     [SerializeField] private TextMeshProUGUI bulletMax;
     [SerializeField] private TextMeshProUGUI bulletCurrent;
 
-    private float time = 7200f;
+    private float time;
 
     private float curHP;
     private float maxHP;
@@ -65,7 +66,12 @@ public class UI_HUD : UI_Base<UI_HUD>
 
     private void Timer()
     {
-        time -= Time.deltaTime;
+        time = Managers.TimeManager.totalTime;
+
+        if(time <= 0f)
+        {
+            timerFrame.color = new Color(1f, 0f, 0f);
+        }
 
         int min = Mathf.Max(0, (int)time / 60);
         int sec = Mathf.Max(0, (int)time % 60);
