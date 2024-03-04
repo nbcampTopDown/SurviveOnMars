@@ -17,6 +17,7 @@ public class Managers : MonoBehaviour
     private TimeManager _timeManager;
     private UI_Manager _uiManager;
     private SoundManager _soundManager;
+    private StoreDataManager _storedataManager;
     
     public static PoolManager Pool => Instance._poolManager;
     public static ResourceManager RM => Instance._resourceManager;
@@ -32,6 +33,8 @@ public class Managers : MonoBehaviour
     public static UI_Manager UI_Manager => Instance._uiManager;
 
     public static SoundManager SoundManager => Instance._soundManager;
+
+    public static StoreDataManager StoreDataManager => Instance._storedataManager;
     
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Execute()
@@ -109,6 +112,15 @@ public class Managers : MonoBehaviour
             {
                 _instance._soundManager = go.AddComponent<SoundManager>();
             }
+
+            #region storedataManager create
+            if(!go.TryGetComponent(out _instance._storedataManager))
+            {
+                GameObject obj = Instantiate(Resources.Load<GameObject>("Prefabs/StoreData"));
+                _instance._storedataManager = obj.GetComponent<StoreDataManager>();
+                DontDestroyOnLoad(obj);
+            }
+            #endregion
         }
     }
 
