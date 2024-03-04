@@ -6,22 +6,7 @@ using UnityEngine;
 
 public class UI_Manager : MonoBehaviour
 {
-    //private static UI_Manager _instance;
-    //public static UI_Manager instance
-    //{
-    //    get
-    //    {
-    //        if(_instance == null)
-    //        {
-    //            GameObject go = new GameObject(typeof(UI_Manager).FullName);
-    //            _instance = go.AddComponent<UI_Manager>();
-                
-    //            DontDestroyOnLoad(go);
-    //        }
 
-    //        return _instance;
-    //    }
-    //}
 
     Dictionary<string, GameObject> UI_List = new Dictionary<string, GameObject>();
     Transform _uiManager;
@@ -44,8 +29,6 @@ public class UI_Manager : MonoBehaviour
 
     public void HideUI<T>()
     {
-        // if (Time.timeScale != 0f)
-        //     return;
 
         if (UI_List.ContainsKey(typeof(T).Name) && UI_List[typeof(T).Name] == null)
             return;
@@ -58,9 +41,6 @@ public class UI_Manager : MonoBehaviour
         string className = typeof(T).Name;
         if (UI_List.ContainsKey(className))
         {
-            //if (UI_List[className].gameObject != null)
-            //    Destroy(UIList[className]);
-
             UI_List.Remove(className);
         }
     }
