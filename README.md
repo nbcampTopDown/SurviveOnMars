@@ -26,21 +26,24 @@ Unity 심화 주차 팀프로젝트 문영오 육수들IV 의 팀프로젝트 �
 
 ### StartScene
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/2b92e9c6-aad1-4063-ad93-83978e6f1196/Untitled.png)
+![image](https://github.com/nbcampTopDown/SurviveOnMars/assets/154484912/ca691ed0-d7ff-4a69-a5e3-b54cc9d1c541)
+
 
 ### GameScene
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/e58ad249-ad28-4b36-afbb-c3670902b17a/Untitled.png)
+![image](https://github.com/nbcampTopDown/SurviveOnMars/assets/154484912/db35dbfd-bcd6-4324-a034-14187d2c8167)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/462ab9d6-8f8a-412f-a8b7-7d2dc7b4210a/Untitled.png)
+![image](https://github.com/nbcampTopDown/SurviveOnMars/assets/154484912/96b88d59-3394-4b1e-9049-12926994916a)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/8b3902b6-998c-4518-9433-67788346bf71/Untitled.png)
+![image](https://github.com/nbcampTopDown/SurviveOnMars/assets/154484912/82d3c315-714e-49be-9b09-17e377ccf44d)
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/74d607ec-ced3-414a-9114-c1f8b606827e/Untitled.png)
+![image](https://github.com/nbcampTopDown/SurviveOnMars/assets/154484912/30864c13-756e-4d0b-843d-b2509866b36a)
+
 
 ### EndingScene
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/448044f9-fa4c-4d9b-910a-d86c50501f07/Untitled.png)
+![image](https://github.com/nbcampTopDown/SurviveOnMars/assets/154484912/72f4a328-93fd-47eb-b432-6f8408af3bba)
+
 
 ## 구현사항
 
@@ -102,11 +105,13 @@ Unity 심화 주차 팀프로젝트 문영오 육수들IV 의 팀프로젝트 �
 
 - 동적 생성을 통해 맵과 플레이어, 적, UI 등의 거의 모든 오브젝트를 생성하도록 구현했습니다.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/2379aecc-33ce-491e-92e5-980722a3c532/Untitled.png)
+![image](https://github.com/nbcampTopDown/SurviveOnMars/assets/154484912/5eedc40c-7187-41be-914c-b1bdb3361a35)
+
 
 ## 🖌️ 와이어프레임
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/83c75a39-3aba-4ba4-a792-7aefe4b07895/9509ac77-da99-4b58-90c3-ea5b54bfd71f/Untitled.png)
+![image](https://github.com/nbcampTopDown/SurviveOnMars/assets/154484912/2aa11205-f282-4607-a48f-f941e8ea344c)
+
 
 ## 🪄 Asset
 
