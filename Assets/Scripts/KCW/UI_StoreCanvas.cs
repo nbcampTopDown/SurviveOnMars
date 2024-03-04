@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,7 +29,7 @@ public class UI_StoreCanvas: UI_Base<UI_StoreCanvas>
 
     private void Start()
     {
-        tabselect = TabSelection.profile;
+        OnProfileButton();
         profileTabBtn.onClick.AddListener(OnProfileButton);
         storyTabBtn.onClick.AddListener(OnStoryButton);
         upgradeTabBtn.onClick.AddListener(OnUpgradeButton);
@@ -68,6 +69,4 @@ public class UI_StoreCanvas: UI_Base<UI_StoreCanvas>
 #endif
 
     }
-
-
 }

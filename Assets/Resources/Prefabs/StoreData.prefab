@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3594776430121174499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 19038990149938986}
+  - component: {fileID: 6247279020024207544}
+  m_Layer: 0
+  m_Name: StoreData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &19038990149938986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594776430121174499}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 666, y: 760.9999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6247279020024207544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3594776430121174499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c7cd1b9e8852c749a0c1a55f48ea799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemData:
+  - {fileID: 11400000, guid: 4bdb36b2e6c2c1d408548cd198f87044, type: 2}
+  - {fileID: 11400000, guid: d2b776adc655e51479bde0ee36732f2d, type: 2}
+  - {fileID: 11400000, guid: 48dfa09a477657147b0a98bf8e73c7a3, type: 2}
+  - {fileID: 11400000, guid: f46b64a7a727a6b40bdd71f7127bfd4c, type: 2}
+  - {fileID: 11400000, guid: 37d43ea06ac48b54ebef6e990dcfbd1c, type: 2}
+  weaponData:
+  - {fileID: 11400000, guid: 41f99fcd533ff974c8afb516aa813036, type: 2}
+  weaponicon:
+  - {fileID: 21300002, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
+  - {fileID: 21300024, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
+  - {fileID: 21300026, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
+  - {fileID: 21300026, guid: 2f84b5c8ce2b18549a175522847db7d6, type: 3}
+  money: 1000000

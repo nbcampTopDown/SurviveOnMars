@@ -41,6 +41,47 @@ public class PlayerStatsManager: MonoBehaviour
         
         OnWeaponChange?.Invoke();
     }
+
+    public void WeaponStatApply(WeaponSO weapon, ItemSO item)
+    {
+       switch(item.Stype)
+        {
+            case StatType.W_Atk:
+                P_AtkModifier = item.value;
+                break;
+            case StatType.W_Firerate:
+                P_FireRateModifier = item.value;
+                break;
+            default:
+                break;
+        }
+
+        switch(item.calculate)
+        {
+            case CalculateType.Add:
+                W_Atk = weapon.atk + P_AtkModifier;
+                W_FireRate = weapon.fireRatePerMinute + P_FireRateModifier;
+                break;
+            case CalculateType.Multiply:
+                if (P_AtkModifier != 0)
+                    W_Atk = weapon.atk + P_AtkModifier;
+                if(P_FireRateModifier!=0)
+                    W_FireRate = weapon.fireRatePerMinute * P_FireRateModifier;
+                break;
+            case CalculateType.Minus:
+                W_Atk = weapon.atk - P_AtkModifier;
+                W_FireRate = weapon.fireRatePerMinute - P_FireRateModifier;
+                break;
+            default:
+                break;
+        }
+
+        weapon.atk = W_Atk;
+        P_AtkModifier = 0;
+        weapon.fireRatePerMinute = W_FireRate;
+        P_FireRateModifier = 0;
+
+    }
     
     public void Init()
     {
