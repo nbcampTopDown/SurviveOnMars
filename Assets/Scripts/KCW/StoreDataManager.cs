@@ -42,7 +42,7 @@ public class StoreDataManager : MonoBehaviour
         {
             Managers.GameSceneManager.Player.GetComponent<Player>();
             UI_ProfileControl.Instance.playerhp.text = Managers.GameSceneManager.Player.GetComponent<Player>().CharacterHealth.Health.ToString();
-            UI_ProfileControl.Instance.playerhp.text = Managers.GameSceneManager.Player.GetComponent<Player>().CurrentStamina.ToString();
+            UI_ProfileControl.Instance.playerstamina.text = Managers.GameSceneManager.Player.GetComponent<Player>().CurrentStamina.ToString();
             UI_ProfileControl.Instance.weaponAtkText.text = Managers.PlayerStats.W_Atk.ToString();
             UI_ProfileControl.Instance.weaponFireRateText.text = Managers.PlayerStats.W_FireRate.ToString();
             UI_ProfileControl.Instance.moneyText.text = money.ToString();

@@ -36,11 +36,6 @@ public class UI_StoreCanvas: UI_Base<UI_StoreCanvas>
         StartCoroutine(OnFirstUI());
     }
 
-    private void Update()
-    {
-        StoreDataManager.Instance.CheckPlayer();
-    }
-
 
     IEnumerator OnFirstUI()
     {
