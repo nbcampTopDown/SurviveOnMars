@@ -2291,6 +2291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda5520f91e3aa34a804af87eabd275d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerFrame: {fileID: 7855479009725572502}
   hpBar: {fileID: 3222174459414928329}
   staminaBar: {fileID: 2430004435113712789}
   weaponImg: {fileID: 6809559219241564247}
