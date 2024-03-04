@@ -13,7 +13,7 @@ Unity 심화 주차 팀프로젝트 문영오 육수들IV 의 팀프로젝트 �
 ## 👨‍👨‍👧‍👦 멤버
 
 - 문정현(팀장) : Player, Enemy, EnemySpawn, EndingLogic
-- 김준하 : Weapon, Map, Audio
+- 김준하 : Weapon, Map, Audio, ObjectPool
 - 김철우 : StoreUI, Upgrade Item
 - 김상민 : UI, StartScene,EndingScene
 
