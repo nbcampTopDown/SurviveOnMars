@@ -30,7 +30,7 @@ public class SceneLoader : MonoBehaviour
         {
             // StartScene
             case 0:
-                Debug.Log("Scene Loaded 0");
+                Managers.UI_Manager.ShowUI<UI_Intro>();
                 break;
             // GameScene
             case 1:
