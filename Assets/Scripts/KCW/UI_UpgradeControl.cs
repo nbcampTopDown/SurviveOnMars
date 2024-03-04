@@ -83,8 +83,9 @@ public class UI_UpgradeControl : MonoBehaviour
                 ItemSO itemToChange = StoreDataManager.Instance.itemList[itemListNumber].itemDatas[itemDatasNumber];
                 if (StoreDataManager.Instance.OnChangeMoney(itemToChange.cost))
                 {
+                    StoreDataManager.Instance.itemList[itemListNumber].purchasedData[itemDatasNumber] = true;
                     StoreDataManager.Instance.OnChangeStat(itemListNumber, itemToChange);
-                    Information.GetComponent<Button>().enabled = false;
+                    Information.GetComponent<Button>().onClick.RemoveListener(OnPurchase);
                 }
             }
         }
@@ -109,7 +110,11 @@ public class UI_UpgradeControl : MonoBehaviour
             {
                 Information.SetActive(true);
                 Information.GetComponentInChildren<Text>().text = StoreDataManager.Instance.itemList[itemListNumber].itemDatas[itemDatasNumber].description;
-                Information.GetComponentInChildren<Button>().onClick.AddListener(OnPurchase);
+
+                if (StoreDataManager.Instance.itemList[itemListNumber].purchasedData[itemDatasNumber])
+                {
+                    Information.GetComponentInChildren<Button>().onClick.AddListener(OnPurchase);
+                }
                 Information.name = gameObject.transform.name;
             }
         }
