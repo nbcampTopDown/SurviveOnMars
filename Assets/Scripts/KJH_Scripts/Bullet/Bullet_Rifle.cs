@@ -40,10 +40,14 @@ public class Bullet_Rifle : Bullet
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.TryGetComponent<IDamageable>(out var iDamageable))
+        if ((targetLayer.value & (1 << collision.transform.gameObject.layer)) > 0)
         {
-            iDamageable.TakeDamage(Atk);
+            if (collision.TryGetComponent<IDamageable>(out var iDamageable))
+            {
+                iDamageable.TakeDamage(Atk);
+            }
         }
+
         OnHitClear();
     }
 

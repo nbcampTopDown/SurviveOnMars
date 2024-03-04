@@ -14,6 +14,11 @@ public class TimeManager : MonoBehaviour
         _scheduler = StartCoroutine(GameScheduler());
     }
 
+    public void StartLandingShip()
+    {
+        StartCoroutine(LandingShipScheduler());
+    }
+
     private IEnumerator GameScheduler()
     {
         var wait = new WaitForFixedUpdate();
@@ -25,7 +30,19 @@ public class TimeManager : MonoBehaviour
         }
 
         totalTime = 0f;
+        StartCoroutine(LandingShipScheduler());
+    }
+
+    private IEnumerator LandingShipScheduler()
+    {
         yield return new WaitForSeconds(2f);
+        var nestList = Managers.GameSceneManager.Nests;
+        foreach (var nest in nestList)
+        {
+            nest.FinalWave();
+        }
+        
+        var wait = new WaitForFixedUpdate();
         totalTime = 90f;
 
         while (totalTime >= 0f)

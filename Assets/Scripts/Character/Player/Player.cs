@@ -78,6 +78,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+        Debug.Log(damage);
         CharacterHealth.TakeDamage(damage);
     }
     
@@ -119,7 +120,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private IEnumerator StaminaRegenRoutine()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.2f);
         
         var waitForFixedUpdate = new WaitForFixedUpdate();
         while (CurrentStamina < MaxStamina)

@@ -42,7 +42,6 @@ public class Nest : MonoBehaviour, IDamageable
             enemy.State = EnemyState.Chase;
         }
         chasingEnemies.AddRange(enemies);
-        enemies.Clear();
 
         StartCoroutine(SpawnEnemy(true));
     }
@@ -53,7 +52,7 @@ public class Nest : MonoBehaviour, IDamageable
 
         while (true)
         {
-            if (enemies.Count + chasingEnemies.Count < saturated)
+            if (enemies.Count < saturated)
             {
                 if (!isFinal)
                 {
@@ -91,7 +90,6 @@ public class Nest : MonoBehaviour, IDamageable
                 {
                     enemies[i].State = EnemyState.Chase;
                     chasingEnemies.Add(enemies[i]);
-                    enemies.RemoveAt(0);
                 }
             }
             
@@ -105,10 +103,10 @@ public class Nest : MonoBehaviour, IDamageable
         
         foreach (var enemy in enemies)
         {
-            enemy.State = EnemyState.Chase;
+            if (enemy.gameObject.activeSelf)
+                enemy.State = EnemyState.Chase;
         }
         chasingEnemies.AddRange(enemies);
-        enemies.Clear();
     }
 
     public void TakeDamage(float damage)
@@ -117,11 +115,15 @@ public class Nest : MonoBehaviour, IDamageable
         characterHealth.TakeDamage(damage);
     }
 
-    public void OnDie()
+    private void OnDie()
     {
+        if(_isDestroyed) return;
+        
         _isDestroyed = true;
         particle.SetActive(true);
         minimapCircle.SetActive(false);
+        Managers.GameManager.NestNums--;
+        StoreDataManager.Instance.money += 1000;
         StopCoroutine(_spawnCoroutine);
     }
 }

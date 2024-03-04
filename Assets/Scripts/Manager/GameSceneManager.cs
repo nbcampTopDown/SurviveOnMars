@@ -20,7 +20,9 @@ public class GameSceneManager : MonoBehaviour
         var playerPrefab = Resources.Load<GameObject>("Prefabs/PlayerLowPoly");
         Player = Instantiate(playerPrefab, mapInfo.PlayerSpawnPoint.position, Quaternion.Euler(Vector3.zero));
         Managers.UI_Manager.ShowUI<UI_HUD>();
-        
+        Managers.PlayerStats.ClearModifier();
+
+        Managers.GameManager.NestNums = Nests.Count;
         Managers.TimeManager.StartTimer();
     }
 }
