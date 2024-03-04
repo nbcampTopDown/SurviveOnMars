@@ -26,6 +26,8 @@ public class SceneLoader : MonoBehaviour
     
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Managers.Clear();
+
         switch (scene.buildIndex)
         {
             // StartScene
