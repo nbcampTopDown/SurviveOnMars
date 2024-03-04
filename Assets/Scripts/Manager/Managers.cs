@@ -16,6 +16,7 @@ public class Managers : MonoBehaviour
     private gameManager _gameManager;
     private TimeManager _timeManager;
     private UI_Manager _uiManager;
+    private SoundManager _soundManager;
     
     public static PoolManager Pool => Instance._poolManager;
     public static ResourceManager RM => Instance._resourceManager;
@@ -29,6 +30,8 @@ public class Managers : MonoBehaviour
     public static TimeManager TimeManager => Instance._timeManager;
 
     public static UI_Manager UI_Manager => Instance._uiManager;
+
+    public static SoundManager SoundManager => Instance._soundManager;
     
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Execute()
@@ -84,7 +87,7 @@ public class Managers : MonoBehaviour
             {
                 _instance._gameSceneManager = go.AddComponent<GameSceneManager>();
                 // 임시 코드
-                GameSceneManager.InitializeGameScene();
+                //GameSceneManager.InitializeGameScene();
             }
 
             if (!go.TryGetComponent(out _instance._sceneLoader))
@@ -100,6 +103,11 @@ public class Managers : MonoBehaviour
             if(!go.TryGetComponent(out _instance._timeManager))
             {
                 _instance._timeManager = go.AddComponent<TimeManager>();
+            }
+            
+            if (!go.TryGetComponent(out _instance._soundManager))
+            {
+                _instance._soundManager = go.AddComponent<SoundManager>();
             }
         }
     }

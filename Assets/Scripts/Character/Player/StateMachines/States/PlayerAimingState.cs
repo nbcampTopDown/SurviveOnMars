@@ -24,7 +24,7 @@ public class PlayerAimingState : PlayerBaseState
     {
         base.Update();
 
-        if (stateMachine.IsAttacking && stateMachine.Player.TryUseWeapon())
+        if (!stateMachine.IsReloading && stateMachine.IsAttacking && stateMachine.Player.TryUseWeapon())
         {
             StartAnimation(stateMachine.Player.AnimationData.ShootingParameterHash);
         }

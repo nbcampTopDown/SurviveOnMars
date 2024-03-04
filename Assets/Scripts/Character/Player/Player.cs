@@ -18,7 +18,7 @@ public class Player : MonoBehaviour, IDamageable
     public CharacterHealth CharacterHealth { get; private set; }
     
     private PlayerStateMachine _stateMachine;
-    private bool _isDead;
+    public bool isDead;
 
     [field: SerializeField] public ParticleSystem MuzzleFlash { get; private set; }
     private float _fireDelay;
@@ -31,6 +31,8 @@ public class Player : MonoBehaviour, IDamageable
     private float _sprintStaminaCost;
     private float _staminaRegen;
 
+    public AudioClip _reloadClip;
+    
     private void Start()
     {
         VirtualCamera.parent = null;
@@ -55,11 +57,13 @@ public class Player : MonoBehaviour, IDamageable
 
         Input.PlayerActions.Grenade.started += ThrowGrenade;
         CharacterHealth.OnDie += OnDie;
+
+        _reloadClip = Managers.RM.Load<AudioClip>("Sounds/Rifle_Reloading");
     }
     
     private void Update()
     {
-        if(_isDead)
+        if(isDead)
             return;
         
         _stateMachine.HandleInput();
@@ -79,7 +83,7 @@ public class Player : MonoBehaviour, IDamageable
     private void OnDie()
     {
         Animator.SetTrigger(AnimationData.DeadParameterHash);
-        _isDead = true;
+        isDead = true;
     }
 
     public bool TryUseWeapon()
@@ -166,5 +170,6 @@ public class Player : MonoBehaviour, IDamageable
     {
         Animator.SetBool(AnimationData.ReloadingParameterHash, false);
         Managers.Attack.Reload();
+        _stateMachine.IsReloading = false;
     }
 }

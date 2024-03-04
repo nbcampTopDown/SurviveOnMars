@@ -188,7 +188,12 @@ public class PlayerBaseState : IState
     #region Attack
     protected virtual void OnReloadStarted(InputAction.CallbackContext context)
     {
-        StartAnimation(stateMachine.Player.AnimationData.ReloadingParameterHash);
+        if (!stateMachine.Player.isDead)
+        {
+            Managers.SoundManager.PlayClip(stateMachine.Player._reloadClip);
+            stateMachine.IsReloading = true;
+            StartAnimation(stateMachine.Player.AnimationData.ReloadingParameterHash);
+        }
     }
     
     protected virtual void OnAimingStarted(InputAction.CallbackContext context)

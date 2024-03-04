@@ -34,6 +34,7 @@ public class PlayerStateMachine : StateMachine
     public bool IsAttacking { get; set; }
     public bool IsRunning { get; set; }
     public bool IsAiming { get; set; }
+    public bool IsReloading { get; set; }
     
     public PlayerStateMachine(Player player)
     {
