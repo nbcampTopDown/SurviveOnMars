@@ -41,4 +41,9 @@ public class SoundManager : MonoBehaviour
         SoundSource soundSource = Managers.RM.Instantiate("Sounds/Gun_SoundSource").GetComponent<SoundSource>();
         soundSource.Play(clip);
     }
+
+    public void PlayStop()
+    {
+        musicAudioSource.Stop();
+    }
 }

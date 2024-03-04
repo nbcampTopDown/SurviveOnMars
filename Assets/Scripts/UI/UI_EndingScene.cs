@@ -23,9 +23,10 @@ public class UI_EndingScene : UI_Base<UI_EndingScene>
     {
         cinematicMovie.DOFade(1f, 5f);
         yield return new WaitForSeconds(27f);
-        cinematicMovie.DOFade(0f, 10f);
-        yield return new WaitForSeconds(10f);
+        cinematicMovie.DOFade(0f, 8f);
+        yield return new WaitForSeconds(9f);
 
+        Managers.SoundManager.ChangeBackGroundMusic(Managers.RM.Load<AudioClip>("Sounds/BGM/EndingSceneBGM"));
         backGround.DOAnchorPosY(2860f,40f);
         yield break;
 
