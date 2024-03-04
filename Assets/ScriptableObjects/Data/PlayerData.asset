@@ -17,6 +17,6 @@ MonoBehaviour:
   <WalkSpeedModifier>k__BackingField: 0.7
   <RunSpeedModifier>k__BackingField: 1.3
   <MaxStamina>k__BackingField: 100
-  <StaminaRegen>k__BackingField: 20
-  <SprintStaminaCost>k__BackingField: 30
+  <StaminaRegen>k__BackingField: 40
+  <SprintStaminaCost>k__BackingField: 15
   <DodgeStaminaCost>k__BackingField: 30

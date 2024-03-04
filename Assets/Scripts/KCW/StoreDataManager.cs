@@ -26,7 +26,7 @@ public class StoreDataManager : MonoBehaviour
     [SerializeField] private List<WeaponSO> weaponData;
     [SerializeField] private List<Sprite> weaponicon;
 
-    public int money = 1000000;
+    public int money = 0;
 
 
     void Start()

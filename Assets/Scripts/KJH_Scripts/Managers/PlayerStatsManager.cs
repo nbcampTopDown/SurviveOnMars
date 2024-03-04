@@ -42,6 +42,17 @@ public class PlayerStatsManager: MonoBehaviour
         OnWeaponChange?.Invoke();
     }
 
+    private void WeaponStatApply()
+    {
+        var weapon = Managers.Attack.currSO;
+        W_Atk = weapon.atk + P_AtkModifier;
+        W_BulletSpeed = weapon.bulletSpeed + P_BulletSpeedModifier;
+        W_FireRate = weapon.fireRatePerMinute + P_FireRateModifier;
+        W_BulletSpread = Mathf.Max(weapon.bulletSpread - P_BulletSpreadModifier, 0.1f);
+        W_Ammo = weapon.Ammo + P_AmmoModifier;
+        currAmmo = W_Ammo;
+    }
+
     public void WeaponStatApply(WeaponSO weapon, ItemSO item)
     {
        switch(item.Stype)
@@ -75,12 +86,18 @@ public class PlayerStatsManager: MonoBehaviour
             default:
                 break;
         }
+    }
 
-        weapon.atk = W_Atk;
-        P_AtkModifier = 0;
-        weapon.fireRatePerMinute = W_FireRate;
-        P_FireRateModifier = 0;
-
+    public void ClearModifier()
+    {
+        SpeedModifier = 0f;
+        P_AtkModifier = 0f;
+        P_BulletSpeedModifier = 0f;
+        P_FireRateModifier = 0f;
+        P_BulletSpreadModifier = 0f;
+        P_AmmoModifier = 0;
+        hasGrenades = 4;
+        WeaponStatApply();
     }
     
     public void Init()

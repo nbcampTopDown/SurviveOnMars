@@ -60,7 +60,6 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         StopCoroutine(_followCoroutine);
         State = EnemyState.Spawn;
-        _state = defaultState;
     }
 
     public void Spawn(Vector3 position)
@@ -150,17 +149,19 @@ public class Enemy : MonoBehaviour, IDamageable
     private void OnDie()
     {
         CharacterHealth.OnDie -= OnDie;
+        _collider.enabled = false;
         StopCoroutine(_followCoroutine);
         agent.SetDestination(this.transform.position);
-        _collider.enabled = false;
         Animator.SetTrigger(_dieHash);
-        Nest.chasingEnemies.Remove(this);
+        StoreDataManager.Instance.money += 500;
         StartCoroutine(RemoveBody());
     }
 
     private IEnumerator RemoveBody()
     {
         yield return new WaitForSeconds(2f);
+        Nest.enemies.Remove(this);
+        Nest.chasingEnemies.Remove(this);
         Managers.RM.Destroy(gameObject);
     }
 }

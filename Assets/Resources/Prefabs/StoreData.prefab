@@ -58,7 +58,7 @@ MonoBehaviour:
   - {fileID: 21300024, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
   - {fileID: 21300026, guid: 71a7f8669de848e45ba57bda95f3a58e, type: 3}
   - {fileID: 21300026, guid: 2f84b5c8ce2b18549a175522847db7d6, type: 3}
-  money: 1000000
+  money: 0
 --- !u!114 &2164090875624503669
 MonoBehaviour:
   m_ObjectHideFlags: 0
