@@ -33,27 +33,21 @@ public class StoreDataManager : MonoBehaviour
     {
         Instance = this;
         StartCoroutine(InputInfo());
-        StartCoroutine(CheckPlayer());
     }
 
-    private IEnumerator CheckPlayer()
+    public void CheckPlayer()
     {
-        yield return new WaitForSeconds(0.1f);
-        while(true)
+        if (Managers.GameSceneManager.Player != null)
         {
-            if (Managers.GameSceneManager.Player != null)
-            {
-                GameObject player = Managers.GameSceneManager.Player;
+            GameObject player = Managers.GameSceneManager.Player;
 
-                var playerStatScript = player.GetComponent<Player>();
+            var playerStatScript = player.GetComponent<Player>();
 
-                UI_ProfileControl.Instance.playerhp.text = playerStatScript.CharacterHealth.Health.ToString();
-                UI_ProfileControl.Instance.playerhp.text = playerStatScript.CurrentStamina.ToString();
-                UI_ProfileControl.Instance.weaponAtkText.text = Managers.PlayerStats.W_Atk.ToString();
-                UI_ProfileControl.Instance.weaponFireRateText.text = Managers.PlayerStats.W_FireRate.ToString();
-                UI_ProfileControl.Instance.moneyText.text = money.ToString();
-                yield return new WaitForSeconds(0.1f);
-            }
+            UI_ProfileControl.Instance.playerhp.text = playerStatScript.CharacterHealth.Health.ToString();
+            UI_ProfileControl.Instance.playerhp.text = playerStatScript.CurrentStamina.ToString();
+            UI_ProfileControl.Instance.weaponAtkText.text = Managers.PlayerStats.W_Atk.ToString();
+            UI_ProfileControl.Instance.weaponFireRateText.text = Managers.PlayerStats.W_FireRate.ToString();
+            UI_ProfileControl.Instance.moneyText.text = money.ToString();
         }
     }
 

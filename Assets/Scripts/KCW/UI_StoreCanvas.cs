@@ -38,6 +38,7 @@ public class UI_StoreCanvas: UI_Base<UI_StoreCanvas>
 
     public void OnProfileButton()
     {
+        StoreDataManager.Instance.CheckPlayer();
         storyObj.SetActive(false);
         upgradeObj.SetActive(false);
         profileObj.SetActive(true);
