@@ -8,6 +8,7 @@ public class UI_HUD : UI_Base<UI_HUD>
 {
     [SerializeField] private Image hpBar;
     [SerializeField] private Image staminaBar;
+    [SerializeField] private Image weaponImg;
 
     [SerializeField] private TextMeshProUGUI timeText;
     [SerializeField] private TextMeshProUGUI generateMax;
@@ -53,6 +54,7 @@ public class UI_HUD : UI_Base<UI_HUD>
         generateCurrent.text = Managers.PlayerStats.hasGrenades.ToString();
         bulletCurrent.text = Managers.PlayerStats.currAmmo.ToString();
 
+        weaponImg.sprite = Managers.Attack.currSO.sprite;
     }
 
     private float GetPercentage(float curValue, float maxValue)
