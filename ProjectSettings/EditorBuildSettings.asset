@@ -17,4 +17,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DevelopScene/KSM/KSM_TestScene.unity
     guid: c19a38bb2fb7be34781f9c990948d6bf
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: b0dfcde7c55ba0e46a963172861e6aa1, type: 2}

@@ -43,7 +43,7 @@ public class UI_OptionMain : UI_Base<UI_OptionMain>
         seq.Append(mainFrame.transform.DOScale(1.1f, 0.2f));
         seq.Append(mainFrame.transform.DOScale(1f, 0.1f));
 
-        seq.Play().OnComplete(()=> Time.timeScale = 0f);
+        seq.Play().OnComplete(()=> Time.timeScale = gameObject.activeSelf ?  0f : 1f);
     }
 
     public void Hide()

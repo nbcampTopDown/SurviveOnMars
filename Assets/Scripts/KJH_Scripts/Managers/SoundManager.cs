@@ -5,8 +5,7 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour
 {
-    public static SoundManager Instance;
-
+    
     private AudioMixer _audioMixer;
     
     private AudioSource musicAudioSource;
@@ -14,16 +13,6 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance != null)
-        {
-            Destroy(gameObject);
-        }
-        else
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-
         gameObject.AddComponent<AudioSource>();
         musicAudioSource = GetComponent<AudioSource>();
         _audioMixer = Managers.RM.Load<AudioMixer>("Sounds/AudioMixer");
