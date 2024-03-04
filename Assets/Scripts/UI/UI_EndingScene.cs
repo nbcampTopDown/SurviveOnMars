@@ -21,8 +21,8 @@ public class UI_EndingScene : UI_Base<UI_EndingScene>
 
     private IEnumerator FadeInOutMovie()
     {
-        cinematicMovie.DOFade(1f, 10f);
-        yield return new WaitForSeconds(50f);
+        cinematicMovie.DOFade(1f, 5f);
+        yield return new WaitForSeconds(27f);
         cinematicMovie.DOFade(0f, 10f);
         yield return new WaitForSeconds(10f);
 

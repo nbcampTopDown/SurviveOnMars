@@ -28,9 +28,9 @@ public class UI_GameClear : UI_Base<UI_GameClear>
         yield return new WaitForSeconds(2f);
 
         StartCoroutine(TypingText());
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
 
-        Managers.UI_Manager.ShowLoadingUI("KSM_TestScene");
+        Managers.UI_Manager.ShowUI<UI_EndingScene>();
     }
 
     private IEnumerator TypingText()
