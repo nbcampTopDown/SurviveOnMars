@@ -52,6 +52,7 @@ public class StoreDataManager : MonoBehaviour
                 UI_ProfileControl.Instance.weaponAtkText.text = Managers.PlayerStats.W_Atk.ToString();
                 UI_ProfileControl.Instance.weaponFireRateText.text = Managers.PlayerStats.W_FireRate.ToString();
                 UI_ProfileControl.Instance.moneyText.text = money.ToString();
+                yield return new WaitForSeconds(0.1f);
             }
         }
     }
