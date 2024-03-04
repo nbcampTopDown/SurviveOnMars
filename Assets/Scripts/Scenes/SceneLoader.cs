@@ -33,6 +33,7 @@ public class SceneLoader : MonoBehaviour
             // StartScene
             case 0:
                 Managers.UI_Manager.ShowUI<UI_Intro>();
+                Managers.UI_Manager.ShowUI<UI_OptionMain>();
                 break;
             // GameScene
             case 1:
