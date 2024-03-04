@@ -397,7 +397,7 @@ GameObject:
   - component: {fileID: 3649257755046876205}
   - component: {fileID: 1681438548764284560}
   - component: {fileID: 4815889082570736468}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: nave
   m_TagString: Untagged
   m_Icon: {fileID: 0}

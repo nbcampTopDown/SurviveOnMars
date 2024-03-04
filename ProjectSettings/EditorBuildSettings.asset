@@ -12,10 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/ReleaseScene/GameScene.unity
     guid: e61317165b8192e41acf9efece56bad2
   - enabled: 1
-    path: Assets/Scenes/DevelopScene/KSM/KSM_StartScene.unity
-    guid: 8b9a36df5152a044d8379c8cffaa4926
-  - enabled: 1
-    path: Assets/Scenes/DevelopScene/KSM/KSM_TestScene.unity
-    guid: c19a38bb2fb7be34781f9c990948d6bf
+    path: Assets/Scenes/ReleaseScene/EndingScene.unity
+    guid: 52e2f7709a6341241b2491c9a1a0559b
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: b0dfcde7c55ba0e46a963172861e6aa1, type: 2}

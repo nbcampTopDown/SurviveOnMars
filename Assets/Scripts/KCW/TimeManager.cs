@@ -16,7 +16,7 @@ public class TimeManager : MonoBehaviour
 
     public void StartLandingShip()
     {
-        StartCoroutine(LandingShipScheduler());
+        _scheduler = StartCoroutine(LandingShipScheduler());
     }
 
     private IEnumerator GameScheduler()
@@ -35,6 +35,8 @@ public class TimeManager : MonoBehaviour
 
     private IEnumerator LandingShipScheduler()
     {
+        StopCoroutine(_scheduler);
+        totalTime = 0f;
         yield return new WaitForSeconds(2f);
         var nestList = Managers.GameSceneManager.Nests;
         foreach (var nest in nestList)
