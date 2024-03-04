@@ -20,6 +20,6 @@ public class UI_MissionTracker : MonoBehaviour
 
     private void Tracking()
     {
-        missionTrackingNumberText.text = Managers.GameSceneManager.Nests.Count.ToString();
+        missionTrackingNumberText.text = Managers.GameManager.NestNums.ToString();
     }
 }
