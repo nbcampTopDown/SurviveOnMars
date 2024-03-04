@@ -113,7 +113,7 @@ public class UI_UpgradeControl : MonoBehaviour
                 Information.SetActive(true);
                 Information.GetComponentInChildren<Text>().text = StoreDataManager.Instance.itemList[itemListNumber].itemDatas[itemDatasNumber].description;
 
-                if (StoreDataManager.Instance.itemList[itemListNumber].purchasedData[itemDatasNumber])
+                if (!StoreDataManager.Instance.itemList[itemListNumber].purchasedData[itemDatasNumber])
                 {
                     Information.GetComponentInChildren<Button>().enabled = true;
                     Information.GetComponentInChildren<Button>().onClick.AddListener(OnPurchase);

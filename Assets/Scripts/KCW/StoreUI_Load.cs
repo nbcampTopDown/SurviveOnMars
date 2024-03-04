@@ -17,6 +17,7 @@ public class StoreUI_Load: MonoBehaviour
             else
             {
                 Managers.UI_Manager.HideUI<UI_StoreCanvas>();
+                Time.timeScale = 1f;
             }
         }
     }
