@@ -34,11 +34,13 @@ public class SceneLoader : MonoBehaviour
             case 0:
                 Managers.UI_Manager.ShowUI<UI_Intro>();
                 Managers.UI_Manager.ShowUI<UI_OptionMain>();
+                Managers.SoundManager.ChangeBackGroundMusic(Managers.RM.Load<AudioClip>("Sounds/BGM/StartSceneBGM"));
                 break;
             // GameScene
             case 1:
                 Debug.Log("Scene Loaded 1");
                 Managers.GameSceneManager.InitializeGameScene();
+                Managers.SoundManager.ChangeBackGroundMusic(Managers.RM.Load<AudioClip>("Sounds/BGM/GameSceneBGM"));
                 break;
         }
     }
