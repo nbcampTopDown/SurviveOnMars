@@ -13,6 +13,14 @@ public class StoreUI_Load: MonoBehaviour
             if (!Managers.UI_Manager.IsAcitve<UI_StoreCanvas>())
             {
                 Managers.UI_Manager.ShowUI<UI_StoreCanvas>();
+                try
+                {
+                    StoreDataManager.Instance.CheckPlayer();
+                }
+                catch
+                {
+
+                }
             }
             else
             {
