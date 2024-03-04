@@ -10,6 +10,8 @@ public class Nest : MonoBehaviour, IDamageable
     [field: SerializeField] private int saturated;
     [field: SerializeField] private int chaseNum;
     [field: SerializeField] private CharacterHealth characterHealth;
+    [field: SerializeField] private GameObject minimapCircle;
+    [field: SerializeField] private GameObject particle;
     public List<Enemy> enemies;
     public List<Enemy> chasingEnemies;
     private Coroutine _spawnCoroutine;
@@ -42,7 +44,7 @@ public class Nest : MonoBehaviour, IDamageable
         chasingEnemies.AddRange(enemies);
         enemies.Clear();
 
-        _spawnCoroutine = StartCoroutine(SpawnEnemy(true));
+        StartCoroutine(SpawnEnemy(true));
     }
     
     private IEnumerator SpawnEnemy(bool isFinal = false)
@@ -97,10 +99,9 @@ public class Nest : MonoBehaviour, IDamageable
         }
     }
 
-    public void UnderAttack(bool isBase = false)
+    public void UnderAttack()
     {
-        if(isBase)
-            _isAttacked = true;
+        _isAttacked = true;
         
         foreach (var enemy in enemies)
         {
@@ -112,13 +113,15 @@ public class Nest : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
-        UnderAttack(true);
+        UnderAttack();
         characterHealth.TakeDamage(damage);
     }
 
     public void OnDie()
     {
         _isDestroyed = true;
+        particle.SetActive(true);
+        minimapCircle.SetActive(false);
         StopCoroutine(_spawnCoroutine);
     }
 }

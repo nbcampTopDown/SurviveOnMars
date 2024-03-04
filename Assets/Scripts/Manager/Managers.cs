@@ -13,7 +13,7 @@ public class Managers : MonoBehaviour
     private AttackManager _attackManager;
     private GameSceneManager _gameSceneManager;
     private SceneLoader _sceneLoader;
-    private gameManager _gameManager;
+    private GameManager _gameManager;
     private TimeManager _timeManager;
     private UI_Manager _uiManager;
     private SoundManager _soundManager;
@@ -26,7 +26,7 @@ public class Managers : MonoBehaviour
     public static GameSceneManager GameSceneManager => Instance._gameSceneManager;
     public static SceneLoader SceneLoader => Instance._sceneLoader;
 
-    public static gameManager GameManager => Instance._gameManager;
+    public static GameManager GameManager => Instance._gameManager;
 
     public static TimeManager TimeManager => Instance._timeManager;
 
@@ -89,8 +89,6 @@ public class Managers : MonoBehaviour
             if (!go.TryGetComponent(out _instance._gameSceneManager))
             {
                 _instance._gameSceneManager = go.AddComponent<GameSceneManager>();
-                // 임시 코드
-                //GameSceneManager.InitializeGameScene();
             }
 
             if (!go.TryGetComponent(out _instance._sceneLoader))
@@ -100,7 +98,7 @@ public class Managers : MonoBehaviour
 
             if(!go.TryGetComponent(out _instance._gameManager))
             {
-                _instance._gameManager = go.AddComponent<gameManager>();
+                _instance._gameManager = go.AddComponent<GameManager>();
             }
 
             if(!go.TryGetComponent(out _instance._timeManager))

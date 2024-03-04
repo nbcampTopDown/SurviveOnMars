@@ -39,14 +39,14 @@ public class EnemyManager: MonoBehaviour
     }
 
 
-    private void FixedUpdate()
-    {
-        if (TimeManager.timeIns.totalTime == 100 && lastWaveStage == false)
-        {
-            lastWaveStage = true;
-            LastWave();
-        }
-    }
+    //private void FixedUpdate()
+    //{
+    //    if (TimeManager.timeIns.totalTime == 100 && lastWaveStage == false)
+    //    {
+    //        lastWaveStage = true;
+    //        LastWave();
+    //    }
+    //}
 
     private void LastWave()
     {
