@@ -7,17 +7,19 @@ public class Bullet_Rifle : Bullet
 {
     private Rigidbody rb;
     private TrailRenderer _trailRenderer;
-
+    [SerializeField] private AudioClip _clip;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         _trailRenderer = GetComponent<TrailRenderer>();
+        _clip = Managers.RM.Load<AudioClip>("Sounds/Rifle_Fire");
     }
     
     public override void Setup(Vector3 spawnPos, Quaternion rotation, float atk, float bulletSpeed)
     {
         base.Setup(spawnPos, rotation, atk, bulletSpeed);
 
+        Managers.SoundManager.PlayGunClip(_clip);
         transform.position = spawnPos;
         transform.rotation = rotation;
     }

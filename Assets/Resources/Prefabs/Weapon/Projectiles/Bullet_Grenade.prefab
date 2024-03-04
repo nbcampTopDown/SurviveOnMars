@@ -242,6 +242,7 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 0
+  _explosionSound: {fileID: 0}
   _explosionRadius: 2.5
   _explosionForce: 1000
   _particles: {fileID: 1121192042590650, guid: 07a9b3eeec2ee434cbd4673f63a715e4, type: 3}

@@ -188,6 +188,7 @@ public class PlayerBaseState : IState
     #region Attack
     protected virtual void OnReloadStarted(InputAction.CallbackContext context)
     {
+        Managers.SoundManager.PlayClip(stateMachine.Player._reloadClip);
         StartAnimation(stateMachine.Player.AnimationData.ReloadingParameterHash);
     }
     

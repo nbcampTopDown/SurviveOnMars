@@ -31,6 +31,8 @@ public class Player : MonoBehaviour, IDamageable
     private float _sprintStaminaCost;
     private float _staminaRegen;
 
+    public AudioClip _reloadClip;
+    
     private void Start()
     {
         VirtualCamera.parent = null;
@@ -55,6 +57,8 @@ public class Player : MonoBehaviour, IDamageable
 
         Input.PlayerActions.Grenade.started += ThrowGrenade;
         CharacterHealth.OnDie += OnDie;
+
+        _reloadClip = Managers.RM.Load<AudioClip>("Sounds/Rifle_Reloading");
     }
     
     private void Update()

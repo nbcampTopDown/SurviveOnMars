@@ -54,4 +54,5 @@ public class ResourceManager : MonoBehaviour
 
         Object.Destroy(go);
     }
+    
 }
