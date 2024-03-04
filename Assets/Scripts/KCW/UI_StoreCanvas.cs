@@ -62,11 +62,6 @@ public class UI_StoreCanvas: UI_Base<UI_StoreCanvas>
 
     private void OnClickExitButton()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
-
+        CloseUI();
     }
 }

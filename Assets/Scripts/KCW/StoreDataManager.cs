@@ -39,19 +39,22 @@ public class StoreDataManager : MonoBehaviour
     private IEnumerator CheckPlayer()
     {
         yield return new WaitForSeconds(0.1f);
-        if (Managers.GameSceneManager.Player != null)
+        while(true)
         {
-            GameObject player = Managers.GameSceneManager.Player;
+            if (Managers.GameSceneManager.Player != null)
+            {
+                GameObject player = Managers.GameSceneManager.Player;
 
-            var playerStatScript = player.GetComponent<Player>();
+                var playerStatScript = player.GetComponent<Player>();
 
-            UI_ProfileControl.Instance.playerhp.text = playerStatScript.CharacterHealth.Health.ToString();
-            UI_ProfileControl.Instance.playerhp.text = playerStatScript.CurrentStamina.ToString();
-            UI_ProfileControl.Instance.weaponAtkText.text = Managers.PlayerStats.W_Atk.ToString();
-            UI_ProfileControl.Instance.weaponFireRateText.text = Managers.PlayerStats.W_FireRate.ToString();
-            UI_ProfileControl.Instance.moneyText.text = money.ToString();
+                UI_ProfileControl.Instance.playerhp.text = playerStatScript.CharacterHealth.Health.ToString();
+                UI_ProfileControl.Instance.playerhp.text = playerStatScript.CurrentStamina.ToString();
+                UI_ProfileControl.Instance.weaponAtkText.text = Managers.PlayerStats.W_Atk.ToString();
+                UI_ProfileControl.Instance.weaponFireRateText.text = Managers.PlayerStats.W_FireRate.ToString();
+                UI_ProfileControl.Instance.moneyText.text = money.ToString();
+                yield return new WaitForSeconds(0.1f);
+            }
         }
-        StartCoroutine(CheckPlayer());
     }
 
     private IEnumerator InputInfo()
