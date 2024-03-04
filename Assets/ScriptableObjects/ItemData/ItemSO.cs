@@ -28,9 +28,9 @@ public class ItemSO : ScriptableObject
 
     [Header("Stat")]
     public StatType Stype;
-    public CalculateType calculate;
-    public float value;
+    public CalculateType calculate;//스탯 변경시 더할지, 곱할지, 뺄지 정하는 변수
+    public float value;//변경값
 
     [Header("Cose")]
-    public int cost;
+    public int cost;//구매 비용
 }

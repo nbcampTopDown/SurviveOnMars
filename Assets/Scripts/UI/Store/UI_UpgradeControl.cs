@@ -21,7 +21,7 @@ public class UI_UpgradeControl : MonoBehaviour
     
     void Start()
     {
-        foreach (var item in StoreDataManager.Instance.itemList)
+        foreach (var item in StoreDataManager.Instance.itemList)//아이템 정보를 받아와서 UI 자동 생성
         {
             
             if(item.itemDatas != null)
@@ -34,9 +34,9 @@ public class UI_UpgradeControl : MonoBehaviour
                     Slot.transform.GetChild(2).GetChild(0).GetComponent<Image>().sprite = item.icon;
                     Slot.transform.GetChild(2).GetComponentInChildren<Text>().text = item.itemDatas[0].displayName;
                     Slot.transform.GetChild(0).GetChild(0).GetComponent<Button>().onClick.AddListener(OnDisplay);
-                    Slot.transform.GetChild(2).GetChild(0).GetComponent<Button>().onClick.AddListener(OnDisplay);
+                    Slot.transform.GetChild(2).GetChild(0).GetComponent<Button>().onClick.AddListener(OnDisplay);//버튼 클릭시 정보 popup
                     string temp = iconCount + "_" + ButtonCount;
-                    Slot.transform.GetChild(2).GetChild(0).name = temp;
+                    Slot.transform.GetChild(2).GetChild(0).name = temp;//item 데이터 값 식별을 위해 해당 값을 이름에 입력
                     ButtonCount++;
                     UISlot.Add(Slot);
                 }
@@ -70,7 +70,7 @@ public class UI_UpgradeControl : MonoBehaviour
 
     }
 
-    public void OnPurchase()
+    public void OnPurchase()//구매 버튼 클릭시
     {
         int itemListNumber;
         int itemDatasNumber;
@@ -79,7 +79,7 @@ public class UI_UpgradeControl : MonoBehaviour
 
         try
         {
-            if (int.TryParse(item[0], out itemListNumber) && int.TryParse(item[1], out itemDatasNumber))
+            if (int.TryParse(item[0], out itemListNumber) && int.TryParse(item[1], out itemDatasNumber))//이름에 데이터 값이 포함되어 있는지 확인
             {
                 ItemSO itemToChange = StoreDataManager.Instance.itemList[itemListNumber].itemDatas[itemDatasNumber];
                 if (StoreDataManager.Instance.OnChangeMoney(itemToChange.cost))
@@ -98,7 +98,7 @@ public class UI_UpgradeControl : MonoBehaviour
         
     }
 
-    public void OnDisplay()
+    public void OnDisplay()//아이콘 클릭시 우측에 정보 표시(구매 버튼 포함)
     {
         int itemListNumber;
         int itemDatasNumber;
@@ -108,7 +108,7 @@ public class UI_UpgradeControl : MonoBehaviour
 
         try
         {
-            if (int.TryParse(item[0], out itemListNumber) && int.TryParse(item[1], out itemDatasNumber))
+            if (int.TryParse(item[0], out itemListNumber) && int.TryParse(item[1], out itemDatasNumber))//이름에 데이터 값이 포함되어 있는지 확인
             {
                 Information.SetActive(true);
                 Information.GetComponentInChildren<Text>().text = StoreDataManager.Instance.itemList[itemListNumber].itemDatas[itemDatasNumber].description;

@@ -9,13 +9,13 @@ public enum IsCharacterStat
     stamina
 }
 
-public class StoreData
+public class StoreData//아이템 데이터
 {
-    public Define_Weapon.Weapons weapon;
-    public Sprite icon;
-    public IsCharacterStat stat;
-    public List<ItemSO> itemDatas;
-    public List<bool> purchasedData;
+    public Define_Weapon.Weapons weapon;//무기 형태
+    public Sprite icon;//무기 이미지
+    public IsCharacterStat stat;//캐릭터에 적용되는 스탯
+    public List<ItemSO> itemDatas;//아이템 정보들
+    public List<bool> purchasedData;//구매 여부
 }
 
 public class StoreDataManager : MonoBehaviour
@@ -35,7 +35,7 @@ public class StoreDataManager : MonoBehaviour
         StartCoroutine(InputInfo());
     }
 
-    public void CheckPlayer()
+    public void CheckPlayer()//플레이어와 무기의 스탯을 관리하는 클래스를 호출하여 Profile UI에 값 입력
     {
         
         if (Managers.GameSceneManager.Player != null)
@@ -49,7 +49,7 @@ public class StoreDataManager : MonoBehaviour
         }
     }
 
-    private IEnumerator InputInfo()
+    private IEnumerator InputInfo()//아이템 데이터 값 입력
     {
         yield return new WaitForSeconds(0.1f);
 
@@ -68,9 +68,9 @@ public class StoreDataManager : MonoBehaviour
             storeData.purchasedData.Add(false);
             itemList.Add(storeData);
 
-            storeData = new StoreData();
-            storeData.itemDatas = new List<ItemSO>();
-            storeData.purchasedData = new List<bool>();
+            storeData = new StoreData();//새로 클래스를 선언해야 참조값을 망치지 않고 새로 적용 가능
+            storeData.itemDatas = new List<ItemSO>();//null이 안되도록 새로 설정
+            storeData.purchasedData = new List<bool>();//null이 안되도록 새로 설정
 
             storeData.icon = weaponicon[i];
             storeData.itemDatas.Add(itemData[2]);
@@ -92,7 +92,7 @@ public class StoreDataManager : MonoBehaviour
         */
     }
 
-    public void OnChangeStat(int weaponNumber, ItemSO item)
+    public void OnChangeStat(int weaponNumber, ItemSO item)//스탯 변경시 플레이어의 정보를 관리하는 클래스 호출
     {
         if (weaponNumber==0)
         {
@@ -107,7 +107,7 @@ public class StoreDataManager : MonoBehaviour
         }
     }
 
-    public bool OnChangeMoney(int cost)
+    public bool OnChangeMoney(int cost)//소지한 돈(money) 그리고 구매비용(cost) 비교
     {
         if(money >cost)
         {
