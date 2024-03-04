@@ -6,8 +6,8 @@ using UnityEngine.Serialization;
 
 public class CharacterHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
-    public float Health { get; private set; }
+    [field: SerializeField] public int maxHealth { get; private set; } = 100;
+    public float Health { get; set; }
     public event Action OnDie;
 
     public bool IsDead => Health == 0;
@@ -22,7 +22,6 @@ public class CharacterHealth : MonoBehaviour
         if (Health == 0) return;
         Health = Mathf.Max(Health - damage, 0);
 
-        Debug.Log(Health);
         if (IsDead)
             OnDie?.Invoke();
     }

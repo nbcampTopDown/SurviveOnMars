@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5174727430015690855}
   - component: {fileID: 8387609385493083261}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SK_Soldier_Head_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9071872637061105490}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WeaponGrip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7834648005430579867}
   - component: {fileID: 1573068291370031494}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon_Rifle_1_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2510706908068366554}
   - component: {fileID: 7904094558165669802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon_Rifle_1_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,7 +434,8 @@ GameObject:
   - component: {fileID: 6878291668670745689}
   - component: {fileID: 6628183972887866523}
   - component: {fileID: 4884306999434548522}
-  m_Layer: 0
+  - component: {fileID: 2900875315674892581}
+  m_Layer: 6
   m_Name: PlayerLowPoly
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -515,7 +516,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 43e3414e4f9e05e43a476db74db2c6a4, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -576,6 +577,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 6878291668670745689}
   drag: 0.3
+--- !u!65 &2900875315674892581
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3155214431232855496}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3367622201913118344
 GameObject:
   m_ObjectHideFlags: 0
@@ -586,7 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8609856627645065952}
   - component: {fileID: 3443106531355596677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SK_Soldier_Legs_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +695,7 @@ GameObject:
   - component: {fileID: 2537637255207065130}
   - component: {fileID: 1189744872927527661}
   - component: {fileID: 4972510302243682684}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -778,7 +800,7 @@ GameObject:
   - component: {fileID: 2030152092022599902}
   - component: {fileID: 1076043112544412540}
   - component: {fileID: 1659798169186443831}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -880,7 +902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1838712698096803594}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -914,7 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4201382309620778658}
   - component: {fileID: 8526925542621963252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SK_Soldier_Torso_LOD1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1082,7 +1104,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6360560887945435678}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapon_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,7 +1136,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8307433855003086531}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ShootFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1145,7 +1167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2684478020457826244}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: CaseSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3648050222518597348}
   - component: {fileID: 4772018640901395412}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1321,7 @@ GameObject:
   - component: {fileID: 7168082089407999525}
   - component: {fileID: 1879855093903228502}
   - component: {fileID: 1291299968803641471}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlashHeadon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6197,7 +6219,7 @@ GameObject:
   - component: {fileID: 8604260303770583703}
   - component: {fileID: 5755132521560043487}
   - component: {fileID: 8645524993714738767}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MuzzleFlash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
