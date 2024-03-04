@@ -35,6 +35,7 @@ public class SceneLoader : MonoBehaviour
             // GameScene
             case 1:
                 Debug.Log("Scene Loaded 1");
+                Managers.GameSceneManager.InitializeGameScene();
                 break;
         }
     }

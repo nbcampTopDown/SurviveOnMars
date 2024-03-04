@@ -30,7 +30,7 @@ public class Bullet_Grenade : Bullet
 
     private IEnumerator OnTimeClear()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         var surroundingObjects = Physics.OverlapSphere(transform.position, _explosionRadius, _layerMask);
 
         foreach (var obj in surroundingObjects)
